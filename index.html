@@ -11,8 +11,8 @@
     <!-- Font Awesome Pro Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display / Syne -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter (Font Standar Clean & Rapi) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -30,8 +30,8 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        display: ['Syne', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
                     }
                 }
             }
@@ -42,6 +42,7 @@
         body {
             background-color: #FAFAFA;
             color: #111111;
+            font-family: 'Inter', sans-serif;
         }
 
         /* Subtle Photography Background Layer */
@@ -122,14 +123,12 @@
     <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 z-40 glass-nav-light transition-all duration-300 shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-24">
-                <svg class="h-14 sm:h-16 w-auto transition-transform duration-500 group-hover:scale-105"
-     viewBox="0 0 1050 370"
-     fill="none"
-     xmlns="http://www.w3.org/2000/svg">
-                <!-- BRAND LOGO (Clear & High Contrast) -->
-                <a href="#" class="flex items-center gap-4 group py-2">
-                   
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                
+                <!-- BRAND LOGO (Clean & Normal Text Layout) -->
+                <a href="#" class="flex items-center gap-3 sm:gap-4 group py-2">
+                    <svg class="h-12 sm:h-16 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105"
+                         viewBox="0 0 490 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Camera Red Outline Top -->
                         <path d="M70 100 C70 50, 110 35, 200 35 L280 35 C370 35, 410 50, 410 100" stroke="#FF2E4D" stroke-width="14" stroke-linecap="round"/>
                         <rect x="55" y="60" width="45" height="15" rx="5" fill="#FF2E4D" />
@@ -143,24 +142,26 @@
                         <!-- Aperture Lens -->
                         <circle cx="250" cy="210" r="135" fill="#111111"/>
                         <g stroke="#FFFFFF" stroke-width="5" fill="#111111">
-                        <polygon points="250,75 320,170 195,165"/>
-                        <polygon points="380,140 340,250 265,180"/>
-                        <polygon points="360,285 250,325 235,225"/>
-                        <polygon points="210,345 160,240 240,240"/>
-                        <polygon points="120,265 150,145 220,200"/>
-                        <polygon points="145,120 250,90 230,175"/>
-                    </g>
+                            <polygon points="250,75 320,170 195,165"/>
+                            <polygon points="380,140 340,250 265,180"/>
+                            <polygon points="360,285 250,325 235,225"/>
+                            <polygon points="210,345 160,240 240,240"/>
+                            <polygon points="120,265 150,145 220,200"/>
+                            <polygon points="145,120 250,90 230,175"/>
+                        </g>
+                    </svg>
 
-                    <!-- Brand Text -->
-                    <text x="500" y="185" font-family="Syne, sans-serif" font-weight="800" font-size="100" fill="#111111" letter-spacing="-2">MM</text>
-                    <text x="500" y="255" font-family="Syne, sans-serif" font-weight="700" font-size="52" fill="#111111" letter-spacing="6">STUDIO</text>
-                    
-                    <!-- Tagline -->
-                    <text x="500" y="295" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="26" fill="#FF2E4D" letter-spacing="3">Creative Photography</text>
-                </svg>
-            </a>
+                    <!-- Text Branding Standard Clean HTML -->
+                    <div class="flex flex-col justify-center leading-none">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-3xl sm:text-4xl font-black tracking-tight text-brand-black">MM</span>
+                            <span class="text-xl sm:text-2xl font-extrabold tracking-widest text-brand-black ml-1">STUDIO</span>
+                        </div>
+                        <span class="text-[10px] sm:text-xs font-bold text-brand-red tracking-wider mt-1 uppercase">Creative Photography</span>
+                    </div>
+                </a>
 
-            <!-- DESKTOP NAVIGATION -->
+                <!-- DESKTOP NAVIGATION -->
             <div class="hidden lg:flex items-center space-x-8 text-sm font-bold tracking-wide">
                 <a href="#portofolio" class="text-gray-700 hover:text-brand-red transition-colors">Portofolio Klien</a>
                 <a href="#katalog" class="text-gray-700 hover:text-brand-red transition-colors">Katalog Layanan</a>

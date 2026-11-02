@@ -123,13 +123,13 @@
     <nav class="sticky top-0 z-40 glass-nav-light transition-all duration-300 shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24">
-                
-                <!-- BRAND LOGO (Clear & High Contrast) -->
-                <a href="#" class="flex items-center gap-4 group py-2">
-                    <svg class="h-14 sm:h-16 w-auto transition-transform duration-500 group-hover:scale-105"
+                <svg class="h-14 sm:h-16 w-auto transition-transform duration-500 group-hover:scale-105"
      viewBox="0 0 1050 370"
      fill="none"
      xmlns="http://www.w3.org/2000/svg">
+                <!-- BRAND LOGO (Clear & High Contrast) -->
+                <a href="#" class="flex items-center gap-4 group py-2">
+                   
                         <!-- Camera Red Outline Top -->
                         <path d="M70 100 C70 50, 110 35, 200 35 L280 35 C370 35, 410 50, 410 100" stroke="#FF2E4D" stroke-width="14" stroke-linecap="round"/>
                         <rect x="55" y="60" width="45" height="15" rx="5" fill="#FF2E4D" />
@@ -143,144 +143,144 @@
                         <!-- Aperture Lens -->
                         <circle cx="250" cy="210" r="135" fill="#111111"/>
                         <g stroke="#FFFFFF" stroke-width="5" fill="#111111">
-                            <polygon points="250,75 320,170 195,165"/>
-                            <polygon points="380,140 340,250 265,180"/>
-                            <polygon points="360,285 250,325 235,225"/>
-                            <polygon points="210,345 160,240 240,240"/>
-                            <polygon points="120,265 150,145 220,200"/>
-                            <polygon points="145,120 250,90 230,175"/>
-                        </g>
+                        <polygon points="250,75 320,170 195,165"/>
+                        <polygon points="380,140 340,250 265,180"/>
+                        <polygon points="360,285 250,325 235,225"/>
+                        <polygon points="210,345 160,240 240,240"/>
+                        <polygon points="120,265 150,145 220,200"/>
+                        <polygon points="145,120 250,90 230,175"/>
+                    </g>
 
-                        <!-- Brand Text -->
-                        <text x="500" y="185" font-family="Syne, sans-serif" font-weight="800" font-size="100" fill="#111111" letter-spacing="-2">MM</text>
-                        <text x="500" y="255" font-family="Syne, sans-serif" font-weight="700" font-size="52" fill="#111111" letter-spacing="6">STUDIO</text>
-                        
-                        <!-- Tagline -->
-                        <text x="500" y="295" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="26" fill="#FF2E4D" letter-spacing="3">Creative Photography</text>
-                    </svg>
+                    <!-- Brand Text -->
+                    <text x="500" y="185" font-family="Syne, sans-serif" font-weight="800" font-size="100" fill="#111111" letter-spacing="-2">MM</text>
+                    <text x="500" y="255" font-family="Syne, sans-serif" font-weight="700" font-size="52" fill="#111111" letter-spacing="6">STUDIO</text>
+                    
+                    <!-- Tagline -->
+                    <text x="500" y="295" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="26" fill="#FF2E4D" letter-spacing="3">Creative Photography</text>
+                </svg>
+            </a>
+
+            <!-- DESKTOP NAVIGATION -->
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-bold tracking-wide">
+                <a href="#portofolio" class="text-gray-700 hover:text-brand-red transition-colors">Portofolio Klien</a>
+                <a href="#katalog" class="text-gray-700 hover:text-brand-red transition-colors">Katalog Layanan</a>
+                <a href="#wisuda-promo" class="text-brand-red font-black transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-graduation-cap"></i> Wisuda Special
+                </a>
+                <a href="#calculator" class="text-gray-700 hover:text-brand-red transition-colors">Kalkulator Biaya</a>
+                <a href="#qris-section" class="text-gray-700 hover:text-brand-red transition-colors">Info QRIS</a>
+            </div>
+
+            <!-- RIGHT ACTION BUTTONS -->
+            <div class="flex items-center gap-3">
+                <!-- CART BUTTON -->
+                <button onclick="toggleCart()" class="relative group p-2.5 sm:p-3 bg-white hover:bg-brand-redLight border border-gray-200 rounded-2xl transition duration-300 flex items-center gap-2.5 shadow-sm">
+                    <i class="fa-solid fa-bag-shopping text-brand-red text-base sm:text-lg group-hover:scale-110 transition-transform"></i>
+                    <span class="hidden sm:inline text-xs font-black text-brand-black uppercase tracking-widest">Order Bag</span>
+                    <span id="cart-badge" class="bg-brand-black text-white text-[10px] sm:text-[11px] font-black rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </button>
+
+                <!-- DIRECT RESERVATION BUTTON -->
+                <a href="#checkout-section" class="hidden sm:flex red-gradient-bg hover:opacity-95 text-white font-black px-6 py-3.5 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-brand-red/20 items-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-sm"></i> Fast Booking
                 </a>
 
-                <!-- DESKTOP NAVIGATION -->
-                <div class="hidden lg:flex items-center space-x-8 text-sm font-bold tracking-wide">
-                    <a href="#portofolio" class="text-gray-700 hover:text-brand-red transition-colors">Portofolio Klien</a>
-                    <a href="#katalog" class="text-gray-700 hover:text-brand-red transition-colors">Katalog Layanan</a>
-                    <a href="#wisuda-promo" class="text-brand-red font-black transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-graduation-cap"></i> Wisuda Special
-                    </a>
-                    <a href="#calculator" class="text-gray-700 hover:text-brand-red transition-colors">Kalkulator Biaya</a>
-                    <a href="#qris-section" class="text-gray-700 hover:text-brand-red transition-colors">Info QRIS</a>
-                </div>
-
-                <!-- RIGHT ACTION BUTTONS -->
-                <div class="flex items-center gap-4">
-                    <!-- CART BUTTON -->
-                    <button onclick="toggleCart()" class="relative group p-3 bg-white hover:bg-brand-redLight border border-gray-200 rounded-2xl transition duration-300 flex items-center gap-3 shadow-sm">
-                        <i class="fa-solid fa-bag-shopping text-brand-red text-lg group-hover:scale-110 transition-transform"></i>
-                        <span class="hidden sm:inline text-xs font-black text-brand-black uppercase tracking-widest">Order Bag</span>
-                        <span id="cart-badge" class="bg-brand-black text-white text-[11px] font-black rounded-full w-5 h-5 flex items-center justify-center">0</span>
-                    </button>
-
-                    <!-- DIRECT RESERVATION BUTTON -->
-                    <a href="#checkout-section" class="hidden sm:flex red-gradient-bg hover:opacity-95 text-white font-black px-6 py-3.5 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-brand-red/20 items-center gap-2">
-                        <i class="fa-solid fa-calendar-check text-sm"></i> Fast Booking
-                    </a>
-
-                    <!-- MOBILE MENU TRIGGER -->
-                    <button id="mobile-menu-btn" class="lg:hidden text-brand-black p-2">
-                        <i class="fa-solid fa-bars-staggered text-2xl text-brand-black"></i>
-                    </button>
-                </div>
-
+                <!-- MOBILE MENU TRIGGER -->
+                <button id="mobile-menu-btn" class="lg:hidden text-brand-black p-2 rounded-xl border border-gray-200 bg-white shadow-sm">
+                    <i class="fa-solid fa-bars-staggered text-xl text-brand-black"></i>
+                </button>
             </div>
-        </div>
 
-        <!-- MOBILE NAVIGATION -->
-        <div id="mobile-menu" class="hidden lg:hidden glass-panel-light border-b border-gray-200 px-6 py-6 space-y-4 shadow-xl">
-            <a href="#portofolio" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100">Galeri Portofolio Hasil Foto</a>
-            <a href="#katalog" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100">Katalog & Layanan Studio</a>
-            <a href="#wisuda-promo" onclick="closeMobileMenu()" class="block text-brand-red font-black py-2 border-b border-gray-100">Paket Wisuda Promo</a>
-            <a href="#calculator" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100">Kalkulator Biaya Custom</a>
-            <a href="#qris-section" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100">Info Pembayaran QRIS</a>
-            <a href="#checkout-section" onclick="closeMobileMenu()" class="block red-gradient-bg text-white text-center py-3.5 rounded-xl font-black text-xs uppercase tracking-wider mt-4">
-                Booking / Checkout Instant
-            </a>
         </div>
-    </nav>
+    </div>
+
+    <!-- MOBILE NAVIGATION -->
+    <div id="mobile-menu" class="hidden lg:hidden glass-panel-light border-b border-gray-200 px-6 py-6 space-y-4 shadow-xl">
+        <a href="#portofolio" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100"><i class="fa-solid fa-images text-brand-red mr-2"></i>Galeri Portofolio</a>
+        <a href="#katalog" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100"><i class="fa-solid fa-store text-brand-red mr-2"></i>Katalog & Layanan Studio</a>
+        <a href="#wisuda-promo" onclick="closeMobileMenu()" class="block text-brand-red font-black py-2 border-b border-gray-100"><i class="fa-solid fa-graduation-cap text-brand-red mr-2"></i>Paket Wisuda Promo</a>
+        <a href="#calculator" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100"><i class="fa-solid fa-calculator text-brand-red mr-2"></i>Kalkulator Biaya Custom</a>
+        <a href="#qris-section" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100"><i class="fa-solid fa-qrcode text-brand-red mr-2"></i>Info Pembayaran QRIS</a>
+        <a href="#checkout-section" onclick="closeMobileMenu()" class="block red-gradient-bg text-white text-center py-3.5 rounded-xl font-black text-xs uppercase tracking-wider mt-4">
+            Booking / Checkout Instant
+        </a>
+    </div>
+</nav>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-12 pb-24 overflow-hidden border-b border-gray-200 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- HERO TEXT -->
-                <div class="lg:col-span-7 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-red/30 shadow-sm mb-6">
-                        <span class="w-2 h-2 rounded-full bg-brand-red"></span>
-                        <span class="text-xs font-black text-brand-black uppercase tracking-widest">Satu Tempat, Semua Kebutuhan Foto Anda!</span>
-                    </div>
+<!-- SHOPPING CART SLIDE-OVER DRAWER -->
+<div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+    <div onclick="toggleCart()" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
 
-                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display leading-[1.1] mb-6 text-brand-black tracking-tight">
-                        SATU TEMPAT, <br>
-                        <span class="text-brand-red">SEMUA KEBUTUHAN FOTO!</span>
-                    </h1>
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-4 sm:pl-10">
+        <div class="w-screen max-w-md bg-white border-l border-gray-200 shadow-2xl flex flex-col justify-between">
+            
+            <!-- Drawer Header -->
+            <div class="p-6 border-b border-gray-200 flex items-center justify-between bg-gray-50">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-bag-shopping text-brand-red text-xl"></i>
+                    <h2 class="text-base font-extrabold font-display text-brand-black uppercase tracking-wider">Bag Pesanan MM Studio</h2>
+                </div>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-brand-black p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
 
-                    <p class="text-gray-600 text-base sm:text-lg max-w-2xl font-normal leading-relaxed mb-8 mx-auto lg:mx-0">
-                        Studio Fotografi & Cetak Resmi di Socah Bangkalan. Menyediakan Fotografi Wisuda, Pas Foto Ijazah, Cetak Ultra-HD, Frame Minimalis, Kado Custom, hingga Restorasi Foto.
-                    </p>
+            <!-- Items -->
+            <div class="p-6 overflow-y-auto flex-1 space-y-4" id="cart-items-container">
+                <div class="text-center py-16 text-gray-400">
+                    <i class="fa-solid fa-bag-shopping text-5xl mb-4 text-gray-300"></i>
+                    <p class="font-medium text-sm text-gray-600">Keranjang Anda masih kosong.</p>
+                    <p class="text-xs text-gray-400 mt-1">Pilih paket foto atau produk di atas untuk menambahkan.</p>
+                </div>
+            </div>
 
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                        <a href="#katalog" class="red-gradient-bg hover:opacity-95 text-white font-extrabold px-8 py-4 rounded-2xl transition duration-300 text-xs uppercase tracking-wider shadow-lg shadow-brand-red/20 flex items-center gap-3">
-                            <i class="fa-solid fa-store"></i> Buka Katalog Produk & Services
-                        </a>
-                        <a href="#wisuda-promo" class="bg-white hover:bg-gray-50 text-brand-black border border-gray-300 font-bold px-8 py-4 rounded-2xl transition duration-300 text-xs uppercase tracking-wider flex items-center gap-3 shadow-sm">
-                            <i class="fa-solid fa-graduation-cap text-brand-red"></i> Promo Wisuda 50k & 80k
-                        </a>
-                    </div>
-
-                    <!-- METRICS -->
-                    <div class="grid grid-cols-3 gap-6 pt-10 border-t border-gray-200 mt-10">
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold font-display text-brand-black">4.9/5.0</div>
-                            <div class="text-xs text-gray-500 font-medium mt-1">Kepuasan Pelanggan</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold font-display text-brand-red">100%</div>
-                            <div class="text-xs text-gray-500 font-medium mt-1">Kertas Tajam & Awet</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold font-display text-brand-black">2 Admin</div>
-                            <div class="text-xs text-gray-500 font-medium mt-1">Layanan Fast Response</div>
-                        </div>
-                    </div>
+            <!-- Footer -->
+            <div class="p-6 border-t border-gray-200 bg-gray-50 mb-14 sm:mb-0">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-xs text-gray-500 uppercase tracking-wider font-bold">Total Estimasi:</span>
+                    <span id="cart-total-price" class="text-2xl font-black text-brand-red font-display">Rp 0</span>
                 </div>
 
-                <!-- HERO VISUAL SHOWCASE -->
-                <div class="lg:col-span-5">
-                    <div class="relative group">
-                        <div class="relative z-10 bg-white rounded-3xl p-4 border border-gray-200 shadow-2xl overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000" alt="MM Studio Showcase" class="rounded-2xl w-full h-[420px] object-cover group-hover:scale-105 transition duration-700">
-                            
-                            <div class="absolute bottom-8 left-8 right-8 glass-panel-light p-4 rounded-2xl border border-gray-200">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <span class="text-[10px] text-brand-red uppercase tracking-widest font-black">Hasil Foto Asli Studio</span>
-                                        <h4 class="text-sm font-bold text-brand-black">Graduate, Family & Prewedding</h4>
-                                    </div>
-                                    <span class="bg-brand-black text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase">MM Studio</span>
-                                </div>
-                            </div>
-                        </div>
+                <a href="#checkout-section" onclick="toggleCart()" class="w-full py-4 red-gradient-bg text-white text-center font-black rounded-2xl text-xs uppercase tracking-wider block transition shadow-lg">
+                    Lanjut ke Form Checkout <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
 
-                        <!-- Red Badge Overlay -->
-                        <div class="absolute -bottom-6 -left-6 z-20 bg-brand-black text-white p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3 border border-gray-800">
-                            <div class="w-10 h-10 rounded-xl red-gradient-bg flex items-center justify-center text-white font-black">
-                                <i class="fa-solid fa-camera"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs font-black">Socah Bangkalan</div>
-                                <div class="text-[10px] text-gray-400">Hubungi Admin I / Admin II</div>
-                            </div>
-                        </div>
+        </div>
+    </div>
+</div>
+
+<!-- FLOATING MOBILE BOTTOM NAVIGATION BAR -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 py-2 px-3 lg:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+    <div class="flex items-center justify-around text-center">
+        <a href="#" class="flex flex-col items-center gap-1 text-gray-600 hover:text-brand-red transition">
+            <i class="fa-solid fa-house text-base"></i>
+            <span class="text-[10px] font-bold">Home</span>
+        </a>
+        <a href="#katalog" class="flex flex-col items-center gap-1 text-gray-600 hover:text-brand-red transition">
+            <i class="fa-solid fa-store text-base"></i>
+            <span class="text-[10px] font-bold">Katalog</span>
+        </a>
+        <a href="#wisuda-promo" class="flex flex-col items-center text-brand-red font-black">
+            <div class="w-10 h-10 -mt-5 red-gradient-bg rounded-full flex items-center justify-center text-white shadow-lg border-2 border-white">
+                <i class="fa-solid fa-graduation-cap text-sm"></i>
+            </div>
+            <span class="text-[9px] uppercase tracking-wider mt-0.5">Wisuda</span>
+        </a>
+        <a href="#portofolio" class="flex flex-col items-center gap-1 text-gray-600 hover:text-brand-red transition">
+            <i class="fa-solid fa-images text-base"></i>
+            <span class="text-[10px] font-bold">Galeri</span>
+        </a>
+        <button onclick="toggleCart()" class="flex flex-col items-center gap-1 text-gray-600 hover:text-brand-red transition relative">
+            <i class="fa-solid fa-bag-shopping text-base"></i>
+            <span class="text-[10px] font-bold">Bag</span>
+        </button>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-brand-black py-16 pb-24 lg:pb-16 text-white text-xs relative z-10">
                     </div>
                 </div>
 

@@ -1,1165 +1,452 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MM Studio — Premium Creative Photography & Print House</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome Pro Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Google Fonts: Inter (Font Standar Clean & Rapi) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            red: '#FF2E4D',
-                            redDark: '#D91432',
-                            redLight: '#FFEBF0',
-                            black: '#111111',
-                            darkGray: '#1E1E1E',
-                            lightBg: '#F8F9FA',
-                            cardBorder: '#E5E7EB'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        body {
-            background-color: #FAFAFA;
-            color: #111111;
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Subtle Photography Background Layer */
-        .photo-bg-overlay {
-            position: relative;
-        }
-        .photo-bg-overlay::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            opacity: 0.04;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Glassmorphism Light Panels */
-        .glass-panel-light {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
-        }
-
-        .glass-nav-light {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-
-        .red-gradient-bg {
-            background: linear-gradient(135deg, #FF2E4D 0%, #C71530 100%);
-        }
-
-        .black-gradient-bg {
-            background: linear-gradient(135deg, #18181B 0%, #000000 100%);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F1F1F1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D1D5DB;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #FF2E4D;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MM Studio — Foto Wisuda, Pas Foto & Cetak di Socah Bangkalan</title>
+<meta name="description" content="MM Studio Socah Bangkalan: foto wisuda, pas foto resmi, cetak foto, bingkai, kado custom, print & fotocopy. Booking cepat via WhatsApp.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{colors:{brand:{red:'#FF2E4D',redDark:'#C71530',redLight:'#FFEBF0',black:'#111111'}},fontFamily:{sans:['Inter','sans-serif']}}}}
+</script>
+<style>
+body{background:#FAFAFA;color:#111}
+.rg{background:linear-gradient(135deg,#FF2E4D,#C71530)}
+.nav{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid #0001}
+.chips{scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+:focus-visible{outline:2px solid #FF2E4D;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
-<body class="font-sans antialiased selection:bg-brand-red selection:text-white photo-bg-overlay">
+<body class="font-sans antialiased selection:bg-brand-red selection:text-white pb-16 lg:pb-0">
 
-    <!-- TOP ANNOUNCEMENT BAR -->
-    <div class="bg-brand-black text-white text-xs py-2.5 px-4 border-b border-brand-red/30 relative z-10">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
-            <div class="flex items-center gap-3">
-                <span class="flex h-2.5 w-2.5 relative">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-red"></span>
-                </span>
-                <span class="text-gray-300 font-medium">MM Studio Flagship Socah Bangkalan &bull; Open For Photo Studio & Print</span>
-            </div>
-            <div class="flex items-center gap-6 text-gray-300 text-xs font-medium">
-                <span class="hover:text-brand-red transition"><i class="fa-solid fa-phone text-brand-red mr-1.5"></i> Admin I: 085606175907</span>
-                <span class="hover:text-brand-red transition"><i class="fa-solid fa-phone text-brand-red mr-1.5"></i> Admin II: 081916720280</span>
-            </div>
-        </div>
+<div class="bg-brand-black text-white text-xs py-2.5 px-4">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between gap-2">
+    <span class="text-gray-300"><i class="fa-solid fa-location-dot text-brand-red mr-1.5"></i>MM Studio Socah, Bangkalan</span>
+    <span class="flex gap-5 text-gray-300">
+      <a href="tel:085606175907" class="hover:text-brand-red"><i class="fa-solid fa-phone text-brand-red mr-1"></i>085606175907</a>
+      <a href="tel:081916720280" class="hover:text-brand-red"><i class="fa-solid fa-phone text-brand-red mr-1"></i>081916720280</a>
+    </span>
+  </div>
+</div>
+
+<nav class="sticky top-0 z-40 nav">
+  <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3" aria-label="MM Studio">
+      <svg class="h-10 sm:h-12 w-auto" viewBox="0 0 490 350" fill="none" aria-hidden="true">
+        <path d="M70 100C70 50 110 35 200 35H280C370 35 410 50 410 100" stroke="#FF2E4D" stroke-width="14" stroke-linecap="round"/>
+        <rect x="30" y="105" width="435" height="215" rx="20" stroke="#111" stroke-width="12" fill="#fff"/>
+        <circle cx="420" cy="140" r="10" fill="#111"/>
+        <circle cx="250" cy="210" r="115" fill="#111"/>
+        <circle cx="250" cy="210" r="55" fill="#FF2E4D"/>
+        <circle cx="250" cy="210" r="22" fill="#fff"/>
+      </svg>
+      <div class="leading-none">
+        <div class="font-black text-2xl sm:text-3xl tracking-tight">MM <span class="text-lg sm:text-xl tracking-widest font-extrabold">STUDIO</span></div>
+        <div class="text-[10px] font-bold text-brand-red tracking-wider uppercase mt-1">Creative Photography</div>
+      </div>
+    </a>
+    <div class="hidden lg:flex items-center gap-8 text-sm font-bold text-gray-700">
+      <a href="#portofolio" class="hover:text-brand-red">Portofolio</a>
+      <a href="#wisuda" class="text-brand-red font-black"><i class="fa-solid fa-graduation-cap mr-1"></i>Wisuda</a>
+      <a href="#katalog" class="hover:text-brand-red">Katalog</a>
+      <a href="#kalkulator" class="hover:text-brand-red">Kalkulator</a>
+      <a href="#faq" class="hover:text-brand-red">FAQ</a>
+      <a href="#pembayaran" class="hover:text-brand-red">QRIS</a>
     </div>
-
-    <!-- NAVIGATION BAR -->
-    <nav class="sticky top-0 z-40 glass-nav-light transition-all duration-300 shadow-sm" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 sm:h-24">
-                
-                <!-- BRAND LOGO (Clean & Normal Text Layout) -->
-                <a href="#" class="flex items-center gap-3 sm:gap-4 group py-2">
-                    <svg class="h-12 sm:h-16 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105"
-                         viewBox="0 0 490 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Camera Red Outline Top -->
-                        <path d="M70 100 C70 50, 110 35, 200 35 L280 35 C370 35, 410 50, 410 100" stroke="#FF2E4D" stroke-width="14" stroke-linecap="round"/>
-                        <rect x="55" y="60" width="45" height="15" rx="5" fill="#FF2E4D" />
-                        <!-- Camera Body Outline -->
-                        <path d="M25 210 L25 300 C25 315, 35 325, 50 325 L440 325 C455 325, 465 315, 465 300 L465 125 C465 110, 455 100, 440 100 L370 100" stroke="#FF2E4D" stroke-width="12" stroke-linecap="round"/>
-                        <path d="M25 190 L25 125 C25 110, 35 100, 50 100 L120 100" stroke="#FF2E4D" stroke-width="12" stroke-linecap="round"/>
-                        <rect x="30" y="105" width="435" height="215" rx="20" stroke="#111111" stroke-width="12" fill="#FFFFFF"/>
-                        <!-- Camera Shutter Button -->
-                        <circle cx="420" cy="140" r="10" fill="#111111" />
-                        
-                        <!-- Aperture Lens -->
-                        <circle cx="250" cy="210" r="135" fill="#111111"/>
-                        <g stroke="#FFFFFF" stroke-width="5" fill="#111111">
-                            <polygon points="250,75 320,170 195,165"/>
-                            <polygon points="380,140 340,250 265,180"/>
-                            <polygon points="360,285 250,325 235,225"/>
-                            <polygon points="210,345 160,240 240,240"/>
-                            <polygon points="120,265 150,145 220,200"/>
-                            <polygon points="145,120 250,90 230,175"/>
-                        </g>
-                    </svg>
-
-                    <!-- Text Branding Standard Clean HTML -->
-                    <div class="flex flex-col justify-center leading-none">
-                        <div class="flex items-baseline gap-1">
-                            <span class="text-3xl sm:text-4xl font-black tracking-tight text-brand-black">MM</span>
-                            <span class="text-xl sm:text-2xl font-extrabold tracking-widest text-brand-black ml-1">STUDIO</span>
-                        </div>
-                        <span class="text-[10px] sm:text-xs font-bold text-brand-red tracking-wider mt-1 uppercase">Creative Photography</span>
-                    </div>
-                </a>
-
-                <!-- DESKTOP NAVIGATION -->
-            <div class="hidden lg:flex items-center space-x-8 text-sm font-bold tracking-wide">
-                <a href="#portofolio" class="text-gray-700 hover:text-brand-red transition-colors">Portofolio Klien</a>
-                <a href="#katalog" class="text-gray-700 hover:text-brand-red transition-colors">Katalog Layanan</a>
-                <a href="#wisuda-promo" class="text-brand-red font-black transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-graduation-cap"></i> Wisuda Special
-                </a>
-                <a href="#calculator" class="text-gray-700 hover:text-brand-red transition-colors">Kalkulator Biaya</a>
-                <a href="#qris-section" class="text-gray-700 hover:text-brand-red transition-colors">Info QRIS</a>
-            </div>
-
-            <!-- RIGHT ACTION BUTTONS -->
-            <div class="flex items-center gap-3">
-                <!-- CART BUTTON -->
-                <button onclick="toggleCart()" class="relative group p-2.5 sm:p-3 bg-white hover:bg-brand-redLight border border-gray-200 rounded-2xl transition duration-300 flex items-center gap-2.5 shadow-sm">
-                    <i class="fa-solid fa-bag-shopping text-brand-red text-base sm:text-lg group-hover:scale-110 transition-transform"></i>
-                    <span class="hidden sm:inline text-xs font-black text-brand-black uppercase tracking-widest">Order Bag</span>
-                    <span id="cart-badge" class="bg-brand-black text-white text-[10px] sm:text-[11px] font-black rounded-full w-5 h-5 flex items-center justify-center">0</span>
-                </button>
-
-                <!-- DIRECT RESERVATION BUTTON -->
-                <a href="#checkout-section" class="hidden sm:flex red-gradient-bg hover:opacity-95 text-white font-black px-6 py-3.5 rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-brand-red/20 items-center gap-2">
-                    <i class="fa-solid fa-calendar-check text-sm"></i> Fast Booking
-                </a>
-
-                <!-- MOBILE MENU TRIGGER -->
-                <button id="mobile-menu-btn" class="lg:hidden text-brand-black p-2 rounded-xl border border-gray-200 bg-white shadow-sm">
-                    <i class="fa-solid fa-bars-staggered text-xl text-brand-black"></i>
-                </button>
-            </div>
-
-        </div>
+    <div class="flex items-center gap-2">
+      <button onclick="toggleCart()" class="relative flex items-center gap-2 px-3 py-2.5 bg-white border border-gray-200 rounded-2xl hover:bg-brand-redLight" aria-label="Buka keranjang">
+        <i class="fa-solid fa-bag-shopping text-brand-red"></i>
+        <span class="hidden sm:inline text-xs font-black uppercase tracking-widest">Bag</span>
+        <span id="badge" class="bg-brand-black text-white text-[11px] font-black rounded-full w-5 h-5 flex items-center justify-center">0</span>
+      </button>
+      <a href="#checkout" class="hidden sm:flex rg text-white font-black px-5 py-3 rounded-2xl text-xs uppercase tracking-wider items-center gap-2"><i class="fa-solid fa-calendar-check"></i>Booking</a>
+      <button id="menuBtn" class="lg:hidden p-2.5 border border-gray-200 bg-white rounded-xl" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
-
-    <!-- MOBILE NAVIGATION -->
-    <div id="mobile-menu" class="hidden lg:hidden glass-panel-light border-b border-gray-200 px-6 py-6 space-y-4 shadow-xl">
-        <a href="#portofolio" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100"><i class="fa-solid fa-images text-brand-red mr-2"></i>Galeri Portofolio</a>
-        <a href="#katalog" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100"><i class="fa-solid fa-store text-brand-red mr-2"></i>Katalog & Layanan Studio</a>
-        <a href="#wisuda-promo" onclick="closeMobileMenu()" class="block text-brand-red font-black py-2 border-b border-gray-100"><i class="fa-solid fa-graduation-cap text-brand-red mr-2"></i>Paket Wisuda Promo</a>
-        <a href="#calculator" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100"><i class="fa-solid fa-calculator text-brand-red mr-2"></i>Kalkulator Biaya Custom</a>
-        <a href="#qris-section" onclick="closeMobileMenu()" class="block text-brand-black font-bold py-2 border-b border-gray-100"><i class="fa-solid fa-qrcode text-brand-red mr-2"></i>Info Pembayaran QRIS</a>
-        <a href="#checkout-section" onclick="closeMobileMenu()" class="block red-gradient-bg text-white text-center py-3.5 rounded-xl font-black text-xs uppercase tracking-wider mt-4">
-            Booking / Checkout Instant
-        </a>
-    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden bg-white border-t px-6 py-4 space-y-1 text-sm font-bold">
+    <a href="#portofolio" class="block py-2.5 border-b">Portofolio</a>
+    <a href="#wisuda" class="block py-2.5 border-b text-brand-red">Paket Wisuda</a>
+    <a href="#katalog" class="block py-2.5 border-b">Katalog & Layanan</a>
+    <a href="#kalkulator" class="block py-2.5 border-b">Kalkulator Biaya</a>
+    <a href="#faq" class="block py-2.5 border-b">FAQ</a>
+    <a href="#pembayaran" class="block py-2.5">Pembayaran QRIS</a>
+  </div>
 </nav>
 
-    <!-- HERO SECTION -->
-<!-- SHOPPING CART SLIDE-OVER DRAWER -->
-<div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
-    <div onclick="toggleCart()" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
-
-    <div class="fixed inset-y-0 right-0 max-w-full flex pl-4 sm:pl-10">
-        <div class="w-screen max-w-md bg-white border-l border-gray-200 shadow-2xl flex flex-col justify-between">
-            
-            <!-- Drawer Header -->
-            <div class="p-6 border-b border-gray-200 flex items-center justify-between bg-gray-50">
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-bag-shopping text-brand-red text-xl"></i>
-                    <h2 class="text-base font-extrabold font-display text-brand-black uppercase tracking-wider">Bag Pesanan MM Studio</h2>
-                </div>
-                <button onclick="toggleCart()" class="text-gray-400 hover:text-brand-black p-2">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-            </div>
-
-            <!-- Items -->
-            <div class="p-6 overflow-y-auto flex-1 space-y-4" id="cart-items-container">
-                <div class="text-center py-16 text-gray-400">
-                    <i class="fa-solid fa-bag-shopping text-5xl mb-4 text-gray-300"></i>
-                    <p class="font-medium text-sm text-gray-600">Keranjang Anda masih kosong.</p>
-                    <p class="text-xs text-gray-400 mt-1">Pilih paket foto atau produk di atas untuk menambahkan.</p>
-                </div>
-            </div>
-
-            <!-- Footer -->
-            <div class="p-6 border-t border-gray-200 bg-gray-50 mb-14 sm:mb-0">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-xs text-gray-500 uppercase tracking-wider font-bold">Total Estimasi:</span>
-                    <span id="cart-total-price" class="text-2xl font-black text-brand-red font-display">Rp 0</span>
-                </div>
-
-                <a href="#checkout-section" onclick="toggleCart()" class="w-full py-4 red-gradient-bg text-white text-center font-black rounded-2xl text-xs uppercase tracking-wider block transition shadow-lg">
-                    Lanjut ke Form Checkout <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
-            </div>
-
-        </div>
+<!-- HERO -->
+<header class="relative overflow-hidden bg-brand-black text-white">
+  <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=70&w=1600" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25">
+  <div class="relative max-w-7xl mx-auto px-4 py-20 sm:py-28 max-w-3xl lg:max-w-7xl">
+    <span class="inline-block px-3.5 py-1.5 rounded-full bg-brand-red text-xs font-black uppercase tracking-widest mb-5">Studio Foto & Print — Socah Bangkalan</span>
+    <h1 class="text-4xl sm:text-6xl font-black leading-[1.05] max-w-3xl">Satu tempat, <span class="text-brand-red">semua kebutuhan foto</span> Anda.</h1>
+    <p class="mt-5 text-gray-300 max-w-xl text-sm sm:text-base">Foto wisuda, pas foto resmi, cetak lab, bingkai, kado custom, hingga print & fotocopy. Pilih layanan, masukkan ke Bag, lalu kirim pesanan langsung ke WhatsApp admin.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#katalog" class="rg px-7 py-4 rounded-2xl font-black text-xs uppercase tracking-wider">Lihat Katalog</a>
+      <a href="#wisuda" class="px-7 py-4 rounded-2xl font-black text-xs uppercase tracking-wider border border-white/30 hover:bg-white hover:text-brand-black transition">Paket Wisuda mulai 50 Ribu</a>
     </div>
+    <dl class="mt-12 grid grid-cols-3 gap-4 max-w-lg text-center sm:text-left">
+      <div><dt class="text-[11px] text-gray-400 uppercase tracking-wider">Pas foto</dt><dd class="text-xl font-black">Rp 15rb</dd></div>
+      <div><dt class="text-[11px] text-gray-400 uppercase tracking-wider">Cetak foto</dt><dd class="text-xl font-black">Rp 5rb</dd></div>
+      <div><dt class="text-[11px] text-gray-400 uppercase tracking-wider">Print</dt><dd class="text-xl font-black">Rp 1rb</dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- PORTOFOLIO -->
+<section id="portofolio" class="py-20 bg-white border-b">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="mb-10">
+      <span class="text-xs font-black text-brand-red uppercase tracking-widest">Galeri</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mt-1">Portofolio Hasil Foto</h2>
+      <div id="portoChips" class="chips flex gap-2 overflow-x-auto mt-5 pb-1"></div>
+    </div>
+    <div id="portoGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </div>
+</section>
+
+<!-- WISUDA -->
+<section id="wisuda" class="py-16 bg-brand-redLight/40 border-b">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="text-center mb-10">
+      <span class="px-3.5 py-1.5 rounded-full bg-brand-red text-white text-xs font-black uppercase tracking-widest"><i class="fa-solid fa-graduation-cap mr-1"></i>Special Wisuda</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold mt-4">Momen berharga, <span class="text-brand-red">abadi selamanya</span></h2>
+      <p class="text-gray-600 text-sm mt-3">Cetakan 10R tajam plus file digital hasil retouch.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto" id="wisudaPkgs"></div>
+  </div>
+</section>
+
+<!-- KATALOG -->
+<section id="katalog" class="py-20 border-b">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="mb-8">
+      <span class="text-xs font-black text-brand-red uppercase tracking-widest">Official Storefront</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mt-1">Katalog Produk & Layanan</h2>
+      <div id="catChips" class="chips flex gap-2 overflow-x-auto mt-5 pb-1"></div>
+    </div>
+    <div class="relative max-w-md mb-8">
+      <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+      <input id="search" type="search" placeholder="Cari layanan, pas foto, bingkai..." class="w-full bg-white border border-gray-300 rounded-2xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:border-brand-red">
+    </div>
+    <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+    <p id="empty" class="hidden text-center text-gray-500 py-12 text-sm">Layanan tidak ditemukan. Coba kata kunci lain atau tanyakan langsung ke admin.</p>
+  </div>
+</section>
+
+<!-- KALKULATOR -->
+<section id="kalkulator" class="py-20 bg-white border-b">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="p-6 sm:p-10 rounded-3xl border shadow-xl">
+      <div class="text-center mb-8">
+        <span class="text-xs font-black text-brand-red uppercase tracking-widest">Estimator</span>
+        <h2 class="text-3xl font-extrabold mt-1">Kalkulator Estimasi Layanan</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5 mb-6 text-sm">
+        <label class="block"><span class="block text-xs font-black uppercase tracking-wider mb-2">Paket studio</span>
+          <select id="cPkg" class="w-full border border-gray-300 rounded-2xl px-4 py-3.5 bg-white">
+            <option value="0">Tanpa sesi studio</option>
+            <option value="50000">Wisuda Paket A (Rp 50.000)</option>
+            <option value="80000">Wisuda Paket B (Rp 80.000)</option>
+            <option value="15000">Pas Foto Resmi (Rp 15.000)</option>
+          </select></label>
+        <label class="block"><span class="block text-xs font-black uppercase tracking-wider mb-2">Bingkai</span>
+          <select id="cFrame" class="w-full border border-gray-300 rounded-2xl px-4 py-3.5 bg-white">
+            <option value="0">Tanpa bingkai</option>
+            <option value="35000">Minimalis 10R (+Rp 35.000)</option>
+            <option value="55000">Minimalis 12R (+Rp 55.000)</option>
+          </select></label>
+        <label class="block"><span class="block text-xs font-black uppercase tracking-wider mb-2">Cetak tambahan (Rp 5.000/lembar)</span>
+          <input id="cQty" type="number" min="0" max="500" value="0" class="w-full border border-gray-300 rounded-2xl px-4 py-3.5"></label>
+        <label class="block"><span class="block text-xs font-black uppercase tracking-wider mb-2">Kado custom</span>
+          <select id="cGift" class="w-full border border-gray-300 rounded-2xl px-4 py-3.5 bg-white">
+            <option value="0">Tanpa kado</option>
+            <option value="30000">Mug foto custom (+Rp 30.000)</option>
+          </select></label>
+      </div>
+      <div class="bg-gray-50 p-5 rounded-2xl border flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div><span class="text-xs text-gray-500 font-bold">Estimasi total</span><div id="cTotal" class="text-3xl font-extrabold text-brand-red">Rp 0</div></div>
+        <button onclick="addCalc()" class="rg text-white font-black px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider">+ Tambahkan ke Bag</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 border-b">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl font-extrabold text-center mb-8">Pertanyaan Umum</h2>
+    <div class="space-y-3 text-sm">
+      <details class="bg-white border rounded-2xl p-5"><summary class="font-bold cursor-pointer">Bagaimana cara memesan?</summary><p class="mt-3 text-gray-600">Pilih layanan, masukkan ke Bag, isi form checkout, lalu pesanan terkirim otomatis ke WhatsApp admin pilihan Anda.</p></details>
+      <details class="bg-white border rounded-2xl p-5"><summary class="font-bold cursor-pointer">Apakah harga di web sudah final?</summary><p class="mt-3 text-gray-600">Itu estimasi. Beberapa layanan berharga "mulai dari" dan dapat berbeda sesuai ukuran, bahan, dan tingkat pengeditan. Admin akan mengonfirmasi total akhir.</p></details>
+      <details class="bg-white border rounded-2xl p-5"><summary class="font-bold cursor-pointer">Pembayaran apa saja yang tersedia?</summary><p class="mt-3 text-gray-600">QRIS (e-wallet & mobile banking), tunai di studio, atau transfer bank langsung ke admin.</p></details>
+      <details class="bg-white border rounded-2xl p-5"><summary class="font-bold cursor-pointer">Bisa edit atau restorasi foto lama?</summary><p class="mt-3 text-gray-600">Bisa. Kirim foto ke admin via WhatsApp untuk dicek tingkat kerusakannya sebelum biaya dipastikan.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- QRIS -->
+<section id="pembayaran" class="py-20 bg-white border-b">
+  <div class="max-w-xl mx-auto px-4 text-center">
+    <span class="px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 text-xs font-black uppercase tracking-widest"><i class="fa-solid fa-qrcode mr-1"></i>Cashless</span>
+    <h2 class="text-3xl font-extrabold mt-4 mb-2">Bayar dengan QRIS</h2>
+    <p class="text-gray-500 text-sm mb-6">Mendukung GoPay, OVO, Dana, ShopeePay, dan mobile banking.</p>
+    <div class="bg-gray-50 p-6 rounded-3xl inline-block border shadow-md">
+      <div class="font-extrabold text-sm tracking-wider">MM STUDIO 3</div>
+      <div class="text-[10px] text-gray-500 mb-3 font-mono">NMID: ID1024362745449</div>
+      <!-- Ganti qris.jpg dengan gambar QRIS asli dari bank/penyedia Anda -->
+      <img src="qris.jpg" alt="QRIS MM Studio 3" class="w-56 h-56 mx-auto border rounded-xl bg-white p-2 object-contain" onerror="this.outerHTML='<div class=&quot;w-56 h-56 mx-auto border border-dashed rounded-xl bg-white flex items-center justify-center p-4 text-xs text-gray-400&quot;>Letakkan gambar QRIS asli sebagai file qris.jpg</div>'">
+    </div>
+  </div>
+</section>
+
+<!-- CHECKOUT -->
+<section id="checkout" class="py-20">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="bg-white p-6 sm:p-10 rounded-3xl border shadow-2xl">
+      <div class="text-center mb-8">
+        <span class="text-xs font-black text-brand-red uppercase tracking-widest">Order</span>
+        <h2 class="text-3xl font-extrabold mt-1">Konfirmasi & Booking</h2>
+        <p class="text-gray-500 text-sm mt-1">Pesanan terkirim langsung ke WhatsApp admin.</p>
+      </div>
+      <div id="coSummary" class="mb-6 text-sm bg-gray-50 border rounded-2xl p-4"></div>
+      <form id="form" class="space-y-5 text-sm">
+        <fieldset>
+          <legend class="text-xs font-black uppercase tracking-wider mb-2">1. Admin tujuan</legend>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="flex items-center gap-3 p-4 bg-gray-50 border rounded-2xl cursor-pointer"><input type="radio" name="admin" value="6285606175907" checked class="accent-brand-red"><span><b class="block">Admin I</b>085606175907</span></label>
+            <label class="flex items-center gap-3 p-4 bg-gray-50 border rounded-2xl cursor-pointer"><input type="radio" name="admin" value="6281916720280" class="accent-brand-red"><span><b class="block">Admin II</b>081916720280</span></label>
+          </div>
+        </fieldset>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label><span class="block text-xs font-black uppercase tracking-wider mb-2">2. Nama pemesan</span><input id="name" required maxlength="60" placeholder="Budi Santoso" class="w-full border border-gray-300 rounded-2xl px-4 py-3.5"></label>
+          <label><span class="block text-xs font-black uppercase tracking-wider mb-2">3. No. WhatsApp</span><input id="phone" type="tel" required placeholder="08xxxxxxxxxx" class="w-full border border-gray-300 rounded-2xl px-4 py-3.5"><span id="phoneErr" class="hidden text-xs text-brand-redDark mt-1">Nomor tidak valid (contoh: 08123456789).</span></label>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label><span class="block text-xs font-black uppercase tracking-wider mb-2">4. Tanggal sesi / ambil</span><input id="date" type="date" class="w-full border border-gray-300 rounded-2xl px-4 py-3.5"></label>
+          <label><span class="block text-xs font-black uppercase tracking-wider mb-2">5. Pembayaran</span>
+            <select id="pay" class="w-full border border-gray-300 rounded-2xl px-4 py-3.5 bg-white">
+              <option>QRIS (MM STUDIO 3)</option><option>Tunai di studio</option><option>Transfer bank</option>
+            </select></label>
+        </div>
+        <label class="block"><span class="block text-xs font-black uppercase tracking-wider mb-2">6. Catatan</span><textarea id="notes" rows="3" maxlength="400" placeholder="Warna background pas foto, ukuran bingkai, dll." class="w-full border border-gray-300 rounded-2xl px-4 py-3.5"></textarea></label>
+        <button class="w-full py-4 rg text-white font-black rounded-2xl uppercase tracking-wider flex items-center justify-center gap-3"><i class="fa-brands fa-whatsapp text-2xl"></i>Kirim ke WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-brand-black text-white text-xs py-14 pb-24 lg:pb-14">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <div class="text-2xl font-extrabold">MM <span class="text-brand-red">STUDIO</span></div>
+      <p class="text-gray-400 mt-3 max-w-md leading-relaxed">Satu tempat, semua kebutuhan foto Anda. Studio fotografi & cetak di Socah, Bangkalan.</p>
+    </div>
+    <div>
+      <h4 class="font-bold uppercase tracking-widest mb-3">Layanan</h4>
+      <ul class="space-y-2 text-gray-400"><li><a href="#wisuda" class="hover:text-brand-red">Foto Wisuda</a></li><li><a href="#katalog" class="hover:text-brand-red">Pas Foto Resmi</a></li><li><a href="#katalog" class="hover:text-brand-red">Cetak & Print</a></li><li><a href="#katalog" class="hover:text-brand-red">Bingkai & Kado</a></li></ul>
+    </div>
+    <div>
+      <h4 class="font-bold uppercase tracking-widest mb-3">Kontak</h4>
+      <ul class="space-y-2 text-gray-400">
+        <li><i class="fa-solid fa-location-dot text-brand-red mr-2"></i>Socah, Bangkalan</li>
+        <li><a href="https://wa.me/6285606175907" class="hover:text-white"><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i>Admin I: 085606175907</a></li>
+        <li><a href="https://wa.me/6281916720280" class="hover:text-white"><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i>Admin II: 081916720280</a></li>
+        <li><a href="https://instagram.com/mm.studio_" target="_blank" rel="noopener" class="hover:text-white"><i class="fa-brands fa-instagram text-brand-red mr-2"></i>@mm.studio_</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">&copy; <span id="year"></span> MM Studio. All rights reserved.</div>
+</footer>
+
+<!-- FLOATING WA + MOBILE NAV -->
+<a href="https://wa.me/6285606175907" target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="fixed right-4 bottom-20 lg:bottom-6 z-30 w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-xl text-3xl"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t py-2 px-3 lg:hidden">
+  <div class="flex justify-around text-center text-[10px] font-bold text-gray-600">
+    <a href="#" class="flex flex-col items-center gap-1"><i class="fa-solid fa-house text-base"></i>Home</a>
+    <a href="#katalog" class="flex flex-col items-center gap-1"><i class="fa-solid fa-store text-base"></i>Katalog</a>
+    <a href="#wisuda" class="flex flex-col items-center text-brand-red"><span class="w-10 h-10 -mt-5 rg rounded-full flex items-center justify-center text-white border-2 border-white shadow-lg"><i class="fa-solid fa-graduation-cap"></i></span>Wisuda</a>
+    <a href="#portofolio" class="flex flex-col items-center gap-1"><i class="fa-solid fa-images text-base"></i>Galeri</a>
+    <button onclick="toggleCart()" class="flex flex-col items-center gap-1"><i class="fa-solid fa-bag-shopping text-base"></i>Bag</button>
+  </div>
 </div>
 
-<!-- FLOATING MOBILE BOTTOM NAVIGATION BAR -->
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 py-2 px-3 lg:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
-    <div class="flex items-center justify-around text-center">
-        <a href="#" class="flex flex-col items-center gap-1 text-gray-600 hover:text-brand-red transition">
-            <i class="fa-solid fa-house text-base"></i>
-            <span class="text-[10px] font-bold">Home</span>
-        </a>
-        <a href="#katalog" class="flex flex-col items-center gap-1 text-gray-600 hover:text-brand-red transition">
-            <i class="fa-solid fa-store text-base"></i>
-            <span class="text-[10px] font-bold">Katalog</span>
-        </a>
-        <a href="#wisuda-promo" class="flex flex-col items-center text-brand-red font-black">
-            <div class="w-10 h-10 -mt-5 red-gradient-bg rounded-full flex items-center justify-center text-white shadow-lg border-2 border-white">
-                <i class="fa-solid fa-graduation-cap text-sm"></i>
-            </div>
-            <span class="text-[9px] uppercase tracking-wider mt-0.5">Wisuda</span>
-        </a>
-        <a href="#portofolio" class="flex flex-col items-center gap-1 text-gray-600 hover:text-brand-red transition">
-            <i class="fa-solid fa-images text-base"></i>
-            <span class="text-[10px] font-bold">Galeri</span>
-        </a>
-        <button onclick="toggleCart()" class="flex flex-col items-center gap-1 text-gray-600 hover:text-brand-red transition relative">
-            <i class="fa-solid fa-bag-shopping text-base"></i>
-            <span class="text-[10px] font-bold">Bag</span>
-        </button>
+<!-- CART DRAWER (satu saja) -->
+<div id="drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="Bag pesanan">
+  <div onclick="toggleCart()" class="absolute inset-0 bg-black/60"></div>
+  <div class="absolute inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl flex flex-col">
+    <div class="p-5 border-b flex items-center justify-between bg-gray-50">
+      <h2 class="font-extrabold uppercase tracking-wider text-sm"><i class="fa-solid fa-bag-shopping text-brand-red mr-2"></i>Bag Pesanan</h2>
+      <button onclick="toggleCart()" class="p-2 text-gray-400 hover:text-brand-black" aria-label="Tutup"><i class="fa-solid fa-xmark text-xl"></i></button>
     </div>
+    <div id="cartItems" class="p-5 overflow-y-auto flex-1 space-y-3"></div>
+    <div class="p-5 border-t bg-gray-50">
+      <div class="flex justify-between items-center mb-4"><span class="text-xs text-gray-500 uppercase tracking-wider font-bold">Total estimasi</span><span id="cartTotal" class="text-2xl font-black text-brand-red">Rp 0</span></div>
+      <a href="#checkout" onclick="toggleCart()" class="block w-full py-4 rg text-white text-center font-black rounded-2xl text-xs uppercase tracking-wider">Lanjut ke Checkout <i class="fa-solid fa-arrow-right ml-1"></i></a>
+    </div>
+  </div>
 </div>
 
-<!-- FOOTER -->
-<footer class="bg-brand-black py-16 pb-24 lg:pb-16 text-white text-xs relative z-10">
-                    </div>
-                </div>
+<!-- LIGHTBOX -->
+<div id="lb" class="fixed inset-0 z-[60] bg-black/90 hidden items-center justify-center p-4" onclick="closeLb()">
+  <button class="absolute top-5 right-5 text-white text-3xl p-2" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+  <figure class="max-w-4xl text-center" onclick="event.stopPropagation()">
+    <img id="lbImg" src="" alt="" class="max-h-[75vh] mx-auto rounded-2xl object-contain">
+    <figcaption><h3 id="lbT" class="text-white font-extrabold text-xl mt-4"></h3><p id="lbD" class="text-gray-400 text-xs mt-1"></p></figcaption>
+  </figure>
+</div>
 
-            </div>
-        </div>
-    </section>
+<script>
+const U=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&q=75&w=${w}`;
+const rp=n=>'Rp '+n.toLocaleString('id-ID');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
 
-    <!-- SECTION PORTOFOLIO STUDIO ASLI -->
-    <section id="portofolio" class="py-20 border-b border-gray-200 bg-white z-10 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <span class="text-xs font-black text-brand-red uppercase tracking-widest">Our Real Gallery Works</span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-brand-black mt-1">Portofolio Hasil Foto MM Studio</h2>
-                    <p class="text-gray-500 text-xs sm:text-sm mt-2">Koleksi foto wisuda keluarga, sesi couple aesthetic, dan personal portrait berkualitas tinggi.</p>
-                </div>
+/* DATA */
+const PORTO=[
+ ['1541339907198-e08756dedf3f','wisuda','Wisuda Keluarga Besar','Sesi wisuda lengkap bersama orang tua & saudara'],
+ ['1523050854058-8df90110c9f1','wisuda','Kebanggaan Ayah & Ibu','Wisudawati bersama orang tua tersayang'],
+ ['1519741497674-611481863552','couple','Couple Casual — Studio Blue','Sesi pasangan kasual di studio set'],
+ ['1511285560929-80b456fea0bc','couple','Couple Aesthetic Outdoor','Gaun hitam elegan dengan arsitektur putih'],
+ ['1507003211169-0a1dd7228f2d','portrait','Executive Portrait','Foto formal jas untuk karir & kedinasan'],
+ ['1537633552985-df8429e8048b','wisuda','Sofa Set Studio Arch','Konsep studio sofa teal & arch minimalis']
+];
+const PCATS=[['all','Semua'],['wisuda','Wisuda & Keluarga'],['couple','Couple'],['portrait','Portrait']];
+const PRODUCTS=[
+ {n:'Foto Wisuda — Paket A',c:'wisuda',p:50000,img:'1523050854058-8df90110c9f1',tag:'BEST SELLER',d:'1 sesi foto studio wisuda + 1 cetak 10R premium & retouch file digital.',lab:'Tarif paket'},
+ {n:'Foto Wisuda — Paket B',c:'wisuda',p:80000,img:'1541339907198-e08756dedf3f',tag:'RECOMMENDED',d:'Sesi wisuda + 2 cetak 10R premium + 2 pose berbeda + softfile drive.',lab:'Tarif paket',hot:1},
+ {n:'Pas Foto Studio Resmi',c:'pasfoto',p:15000,img:'1507003211169-0a1dd7228f2d',tag:'RESMI',d:'Ukuran 2x3, 3x4, 4x6 dll, latar merah, biru, atau putih untuk ijazah/kedinasan.',lab:'Mulai dari'},
+ {n:'Bingkai Foto Minimalis 10R',c:'bingkai',p:35000,img:'1513519245088-0e12902e5a38',tag:'FRAME',d:'Bingkai kayu minimalis untuk pajangan foto wisuda & keluarga.',lab:'Harga bingkai'},
+ {n:'Kado Foto Custom (Mug)',c:'kado',p:30000,img:'1514432324607-a09d9b4aefdd',tag:'MERCH',d:'Mug keramik, bantal, kaos, gantungan kunci, puzzle, kalender foto custom.',lab:'Mulai dari'},
+ {n:'Cetak Foto Lab (4R/10R/12R)',c:'cetak',p:5000,img:'1554048612-b6a482bc67e5',tag:'PRINTING',d:'Berbagai ukuran & jenis kertas foto, tajam, anti air, tidak mudah pudar.',lab:'Mulai dari'},
+ {n:'Edit & Restorasi Foto Lama',c:'edit',p:20000,img:'1516035069371-29a1b244cc32',tag:'DIGITAL EDIT',d:'Retouching profesional, perbaikan foto tua rusak, manipulasi & kolase.',lab:'Mulai dari'},
+ {n:'Print File & Fotocopy',c:'cetak',p:1000,img:'1588702547923-7093a6c3ba33',tag:'FAST PRINT',d:'Hitam putih & berwarna: tugas, presentasi, skripsi dengan hasil rapi.',lab:'Mulai dari'}
+];
+const CATS=[['all','Semua'],['wisuda','Foto Wisuda'],['pasfoto','Pas Foto'],['cetak','Cetak & Print'],['bingkai','Bingkai'],['kado','Kado Custom'],['edit','Edit & Restorasi']];
 
-                <!-- Gallery Category Buttons -->
-                <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="porto-filters">
-                    <button onclick="filterPorto('all')" class="porto-btn active bg-brand-black text-white px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Semua Hasil Foto</button>
-                    <button onclick="filterPorto('wisuda-keluarga')" class="porto-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Wisuda & Keluarga</button>
-                    <button onclick="filterPorto('couple')" class="porto-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Couple Aesthetic</button>
-                    <button onclick="filterPorto('portrait')" class="porto-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Personal Portrait</button>
-                </div>
-            </div>
+/* CHIPS */
+function chips(el,list,cur,fn){
+  $(el).innerHTML=list.map(([k,l])=>`<button data-k="${k}" class="px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap border transition ${k===cur?'bg-brand-black text-white border-brand-black':'bg-white text-gray-700 border-gray-200 hover:border-brand-red'}">${l}</button>`).join('');
+  $(el).onclick=e=>{const b=e.target.closest('button');if(b)fn(b.dataset.k)};
+}
 
-            <!-- PORTOFOLIO GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="porto-grid">
+/* PORTFOLIO */
+let pCat='all';
+function renderPorto(){
+  chips('portoChips',PCATS,pCat,k=>{pCat=k;renderPorto()});
+  $('portoGrid').innerHTML=PORTO.map((x,i)=>({x,i})).filter(({x})=>pCat==='all'||x[1]===pCat).map(({x,i})=>`
+  <button onclick="openLb(${i})" class="group relative h-80 rounded-3xl overflow-hidden border bg-gray-100 text-left">
+    <img src="${U(x[0],700)}" alt="${esc(x[2])}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-5 flex flex-col justify-end text-white">
+      <h3 class="font-extrabold">${esc(x[2])}</h3><p class="text-xs text-gray-300 mt-1">${esc(x[3])}</p>
+    </div></button>`).join('');
+}
+function openLb(i){const x=PORTO[i];$('lbImg').src=U(x[0],1200);$('lbImg').alt=x[2];$('lbT').textContent=x[2];$('lbD').textContent=x[3];$('lb').classList.replace('hidden','flex');document.body.style.overflow='hidden'}
+function closeLb(){$('lb').classList.replace('flex','hidden');if($('drawer').classList.contains('hidden'))document.body.style.overflow=''}
 
-                <!-- ITEM 1: Wisuda Keluarga Besar -->
-                <div class="porto-item wisuda-keluarga group relative bg-gray-100 rounded-3xl overflow-hidden shadow-sm border border-gray-200 cursor-pointer h-96" onclick="openLightbox('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1200', 'Foto Wisuda Keluarga Besar', 'Sesi Wisuda Lengkap Bersama Orang Tua & Saudara')">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800" alt="Foto Wisuda Keluarga Besar" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                        <span class="text-[10px] text-brand-red font-black uppercase tracking-widest">Wisuda & Keluarga</span>
-                        <h3 class="font-extrabold text-lg">Momen Wisuda Keluarga Besar</h3>
-                        <p class="text-gray-300 text-xs mt-1">Sesi Foto Wisuda Studio Lengkap Bersama Orang Tua</p>
-                        <div class="mt-3 flex items-center gap-2 text-xs font-bold text-brand-red">
-                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
-                        </div>
-                    </div>
-                </div>
+/* WISUDA */
+$('wisudaPkgs').innerHTML=[
+ ['Paket A',50000,'1 cetak 10R premium','Satu sesi studio + retouch & file high quality.',0],
+ ['Paket B',80000,'2 cetak 10R premium','2 pose berbeda + retouch & file digital drive.',1]
+].map(([n,p,t,d,hot])=>`
+ <div class="bg-white p-6 rounded-2xl relative shadow-md ${hot?'border-2 border-brand-red':'border'}">
+  ${hot?'<span class="absolute top-0 right-0 bg-brand-red text-white text-[9px] font-black px-2 py-0.5 rounded-bl-lg">BEST VALUE</span>':''}
+  <div class="text-[10px] font-black uppercase tracking-wider ${hot?'text-brand-red':'text-gray-500'}">${n}</div>
+  <div class="text-4xl font-black my-1 ${hot?'text-brand-red':''}">${p/1000} RIBU</div>
+  <div class="text-xs font-black mb-2">${t}</div><p class="text-xs text-gray-500">${d}</p>
+  <button onclick="addToCart('Foto Wisuda ${n} (${t})',${p})" class="w-full mt-4 py-3 text-white rounded-xl text-xs font-black ${hot?'rg':'bg-brand-black hover:bg-brand-red'}">+ Ambil Paket Ini</button>
+ </div>`).join('');
 
-                <!-- ITEM 2: Wisuda Bertiga Orang Tua -->
-                <div class="porto-item wisuda-keluarga group relative bg-gray-100 rounded-3xl overflow-hidden shadow-sm border border-gray-200 cursor-pointer h-96" onclick="openLightbox('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1200', 'Foto Wisuda Kebanggaan Orang Tua', 'Sesi Foto Wisudawati Bersama Ayah & Ibu Studio Set')">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800" alt="Foto Wisuda Orang Tua" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                        <span class="text-[10px] text-brand-red font-black uppercase tracking-widest">Wisuda & Keluarga</span>
-                        <h3 class="font-extrabold text-lg">Kebanggaan Ayah & Ibu</h3>
-                        <p class="text-gray-300 text-xs mt-1">Sesi Foto Wisudawati Bersama Orang Tua Tersayang</p>
-                        <div class="mt-3 flex items-center gap-2 text-xs font-bold text-brand-red">
-                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ITEM 3: Sesi Couple Backdrop Biru -->
-                <div class="porto-item couple group relative bg-gray-100 rounded-3xl overflow-hidden shadow-sm border border-gray-200 cursor-pointer h-96" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200', 'Couple Studio — Backdrop Biru', 'Sesi Foto Pasangan Kasual Serba Hitam Studio Set')">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="Couple Backdrop Biru" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                        <span class="text-[10px] text-brand-red font-black uppercase tracking-widest">Couple Aesthetic</span>
-                        <h3 class="font-extrabold text-lg">Couple Casual — Studio Blue</h3>
-                        <p class="text-gray-300 text-xs mt-1">Sesi Foto Pasangan Elegan Baju Hitam Studio Set</p>
-                        <div class="mt-3 flex items-center gap-2 text-xs font-bold text-brand-red">
-                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ITEM 4: Couple Aesthetic Gaun Hitam & Arsitektur Putih -->
-                <div class="porto-item couple group relative bg-gray-100 rounded-3xl overflow-hidden shadow-sm border border-gray-200 cursor-pointer h-96" onclick="openLightbox('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200', 'Prewedding & Couple Outdoor Aesthetic', 'Gaun Hitam Elegan dengan Arsitektur Putih & Payung')">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="Couple Prewedding Aesthetic" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                        <span class="text-[10px] text-brand-red font-black uppercase tracking-widest">Couple Aesthetic</span>
-                        <h3 class="font-extrabold text-lg">Prewedding Aesthetic White Arch</h3>
-                        <p class="text-gray-300 text-xs mt-1">Konsep Gaun Hitam Layar Terbang & Payung Jepang</p>
-                        <div class="mt-3 flex items-center gap-2 text-xs font-bold text-brand-red">
-                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ITEM 5: Executive Personal Portrait -->
-                <div class="porto-item portrait group relative bg-gray-100 rounded-3xl overflow-hidden shadow-sm border border-gray-200 cursor-pointer h-96" onclick="openLightbox('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200', 'Executive Personal Portrait', 'Foto Formal Jas Navy Studio High Resolution')">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Executive Portrait Jas" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                        <span class="text-[10px] text-brand-red font-black uppercase tracking-widest">Personal Portrait</span>
-                        <h3 class="font-extrabold text-lg">Executive Suit & Formal Portrait</h3>
-                        <p class="text-gray-300 text-xs mt-1">Foto Formal Jas Navy & Dasi untuk Karir & Kedinasan</p>
-                        <div class="mt-3 flex items-center gap-2 text-xs font-bold text-brand-red">
-                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ITEM 6: Wisuda Sofa Aesthetic Studio Set -->
-                <div class="porto-item wisuda-keluarga group relative bg-gray-100 rounded-3xl overflow-hidden shadow-sm border border-gray-200 cursor-pointer h-96" onclick="openLightbox('https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&w=1200', 'Foto Wisuda Studio Sofa Aesthetic', 'Set Studio Sofa Biru & Arch Minimalis MM Studio')">
-                    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&w=800" alt="Wisuda Sofa Studio" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                        <span class="text-[10px] text-brand-red font-black uppercase tracking-widest">Wisuda & Keluarga</span>
-                        <h3 class="font-extrabold text-lg">Sofa Set Studio Arch</h3>
-                        <p class="text-gray-300 text-xs mt-1">Konsep Studio Kekinian Sofa Teal & Arch Minimalis</p>
-                        <div class="mt-3 flex items-center gap-2 text-xs font-bold text-brand-red">
-                            <i class="fa-solid fa-expand"></i> Perbesar Gambar
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- LIGHTBOX PREVIEW MODAL -->
-    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-brand-red text-3xl font-black p-2 z-50">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div class="max-w-4xl w-full text-center">
-            <img id="lightbox-img" src="" alt="Preview Portofolio" class="max-h-[75vh] mx-auto rounded-2xl border border-gray-800 shadow-2xl object-contain">
-            <h3 id="lightbox-title" class="text-xl font-extrabold text-white mt-4 font-display"></h3>
-            <p id="lightbox-desc" class="text-xs text-gray-400 mt-1"></p>
-        </div>
+/* CATALOG */
+let cat='all';
+function renderCatalog(){
+  chips('catChips',CATS,cat,k=>{cat=k;renderCatalog()});
+  const q=$('search').value.trim().toLowerCase();
+  const list=PRODUCTS.filter(p=>(cat==='all'||p.c===cat)&&(!q||(p.n+' '+p.d).toLowerCase().includes(q)));
+  $('empty').classList.toggle('hidden',list.length>0);
+  $('grid').innerHTML=list.map(p=>`
+  <article class="bg-white rounded-3xl overflow-hidden flex flex-col justify-between group shadow-sm hover:shadow-xl transition ${p.hot?'border-2 border-brand-red':'border border-gray-200 hover:border-brand-red'}">
+    <div>
+      <div class="relative h-48 overflow-hidden bg-gray-100">
+        <span class="absolute top-3 left-3 z-10 text-white text-[10px] font-black px-2.5 py-1 rounded-lg ${p.hot?'bg-brand-red':'bg-brand-black'}">${p.tag}</span>
+        <img src="${U(p.img,500)}" alt="${esc(p.n)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+      </div>
+      <div class="p-5"><h3 class="font-extrabold text-lg mb-2">${esc(p.n)}</h3><p class="text-gray-500 text-xs leading-relaxed">${esc(p.d)}</p></div>
     </div>
-
-    <!-- PROMO WISUDA SECTION -->
-    <section id="wisuda-promo" class="py-16 relative border-b border-gray-200 bg-white z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-gray-50 via-white to-brand-redLight/30 rounded-3xl p-8 sm:p-12 border border-brand-red/30 shadow-xl relative overflow-hidden">
-                
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                    <div class="lg:col-span-6">
-                        <span class="px-3.5 py-1.5 rounded-full bg-brand-red text-white text-xs font-black uppercase tracking-widest inline-block mb-4">
-                            <i class="fa-solid fa-graduation-cap mr-1"></i> Special Foto Wisuda
-                        </span>
-                        <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-brand-black mb-3">
-                            FOTO WISUDA <br><span class="text-brand-red">MOMEN BERHARGA, ABADI SELAMANYA</span>
-                        </h2>
-                        <p class="text-gray-600 text-xs sm:text-sm mb-8 font-normal">
-                            Abadikan kebanggaan kelulusan Anda bersama MM Studio. Kualitas cetakan ultra-tajam 10R dan file digital retouching.
-                        </p>
-
-                        <!-- Promo Packages Grid -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- Paket 50rb -->
-                            <div class="bg-white p-5 rounded-2xl border border-gray-200 hover:border-brand-red transition duration-300 shadow-sm">
-                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-wider">Promo Package</span>
-                                <div class="text-3xl font-black text-brand-black font-display my-1">50 RIBU</div>
-                                <div class="text-xs text-brand-red font-black mb-2">1 CETAK 10R PREMIUM</div>
-                                <p class="text-[11px] text-gray-500">Satu Sesi Foto Studio + Retouch & File High Quality.</p>
-                                <button onclick="addToCart('Foto Wisuda Paket 50Ribu (1 Cetak 10R)', 50000, 'wisuda')" class="w-full mt-4 py-2.5 bg-brand-black hover:bg-brand-red text-white rounded-xl text-xs font-bold transition">
-                                    + Ambil Paket Ini
-                                </button>
-                            </div>
-
-                            <!-- Paket 80rb -->
-                            <div class="bg-white p-5 rounded-2xl border-2 border-brand-red relative shadow-md">
-                                <span class="absolute top-0 right-0 bg-brand-red text-white text-[9px] font-black px-2 py-0.5 rounded-bl-lg">BEST VALUE</span>
-                                <span class="text-[10px] font-black text-brand-red uppercase tracking-wider">Complete Package</span>
-                                <div class="text-3xl font-black text-brand-red font-display my-1">80 RIBU</div>
-                                <div class="text-xs text-brand-black font-black mb-2">2 CETAK 10R PREMIUM</div>
-                                <p class="text-[11px] text-gray-500">2 Pose Foto Berbeda + Retouch & File Digital Drive.</p>
-                                <button onclick="addToCart('Foto Wisuda Paket 80Ribu (2 Cetak 10R)', 80000, 'wisuda')" class="w-full mt-4 py-2.5 red-gradient-bg text-white rounded-xl text-xs font-black transition">
-                                    + Ambil Paket Ini
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Photo Display -->
-                    <div class="lg:col-span-6">
-                        <div class="grid grid-cols-2 gap-4">
-                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="Wisuda 1" class="rounded-2xl border border-gray-200 object-cover h-64 w-full shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=600" alt="Wisuda 2" class="rounded-2xl border border-gray-200 object-cover h-64 w-full shadow-lg mt-8">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STORE KATALOG & SERVICES -->
-    <section id="katalog" class="py-20 border-b border-gray-200 z-10 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- HEADER -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <span class="text-xs font-black text-brand-red uppercase tracking-widest">Official Storefront</span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-brand-black mt-1">Katalog Produk & Layanan</h2>
-                </div>
-
-                <!-- Category Filters -->
-                <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="category-filters">
-                    <button onclick="setCategory('all')" class="cat-btn active bg-brand-black text-white px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Semua Layanan</button>
-                    <button onclick="setCategory('wisuda')" class="cat-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Foto Wisuda</button>
-                    <button onclick="setCategory('pasfoto')" class="cat-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Pas Foto Official</button>
-                    <button onclick="setCategory('cetak')" class="cat-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Cetak & Print</button>
-                    <button onclick="setCategory('bingkai')" class="cat-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Bingkai Foto</button>
-                    <button onclick="setCategory('kado')" class="cat-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Kado Custom</button>
-                    <button onclick="setCategory('edit')" class="cat-btn bg-white border border-gray-200 text-gray-700 hover:border-brand-red px-4 py-2.5 rounded-xl font-bold text-xs whitespace-nowrap transition">Edit & Restorasi</button>
-                </div>
-            </div>
-
-            <!-- SEARCH BAR -->
-            <div class="relative max-w-md mb-10">
-                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="Cari layanan, pas foto, frame kayu..." class="w-full bg-white border border-gray-300 rounded-2xl pl-11 pr-4 py-3 text-sm text-brand-black placeholder-gray-400 focus:outline-none focus:border-brand-red transition shadow-sm">
-            </div>
-
-            <!-- PRODUCT GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="product-grid">
-
-                <!-- ITEM 1: WISUDA A -->
-                <div class="product-card wisuda bg-white rounded-3xl border border-gray-200 overflow-hidden hover:border-brand-red transition duration-500 flex flex-col justify-between group shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-brand-black text-white text-[10px] font-black px-2.5 py-1 rounded-lg z-10">BEST SELLER</span>
-                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=500" alt="Foto Wisuda Paket A" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-[10px] text-brand-red font-black uppercase tracking-wider">Wisuda Package</span>
-                            <h3 class="font-extrabold text-brand-black text-lg mt-1 mb-2">Foto Wisuda — Paket A</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed">1 Sesi Foto Studio Wisuda + 1 Cetak 10R Premium & Retouch File Digital.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-gray-100 mt-4">
-                        <div class="flex items-baseline justify-between mb-4 mt-3">
-                            <span class="text-xs text-gray-400 font-bold">Tarif Paket</span>
-                            <span class="text-xl font-extrabold text-brand-black font-display">Rp 50.000</span>
-                        </div>
-                        <button onclick="addToCart('Foto Wisuda Paket A (1 Cetak 10R)', 50000, 'wisuda')" class="w-full bg-brand-black hover:bg-brand-red text-white font-extrabold py-3 rounded-2xl text-xs transition duration-300 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus"></i> Tambahkan ke Bag
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ITEM 2: WISUDA B -->
-                <div class="product-card wisuda bg-white rounded-3xl border-2 border-brand-red overflow-hidden hover:shadow-xl transition duration-500 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black px-2.5 py-1 rounded-lg z-10">RECOMMENDED</span>
-                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=500" alt="Foto Wisuda Paket B" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-[10px] text-brand-red font-black uppercase tracking-wider">Wisuda Complete</span>
-                            <h3 class="font-extrabold text-brand-black text-lg mt-1 mb-2">Foto Wisuda — Paket B</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed">Sesi Wisuda + 2 Cetak 10R Premium + 2 Pose Berbeda + Softfile Drive.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-gray-100 mt-4">
-                        <div class="flex items-baseline justify-between mb-4 mt-3">
-                            <span class="text-xs text-gray-400 font-bold">Tarif Paket</span>
-                            <span class="text-xl font-extrabold text-brand-red font-display">Rp 80.000</span>
-                        </div>
-                        <button onclick="addToCart('Foto Wisuda Paket B (2 Cetak 10R)', 80000, 'wisuda')" class="w-full red-gradient-bg text-white font-black py-3 rounded-2xl text-xs hover:opacity-95 transition duration-300 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus"></i> Tambahkan ke Bag
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ITEM 3: PAS FOTO RESMI -->
-                <div class="product-card pasfoto bg-white rounded-3xl border border-gray-200 overflow-hidden hover:border-brand-red transition duration-500 flex flex-col justify-between group shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-brand-black text-white text-[10px] font-black px-2.5 py-1 rounded-lg z-10">RESMI</span>
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500" alt="Pas Foto Official" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Official Document</span>
-                            <h3 class="font-extrabold text-brand-black text-lg mt-1 mb-2">Pas Foto Studio Official</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed">Ukuran resmi (2x3, 3x4, 4x6, dll) latar Merah, Biru, atau Putih ijazah/kedinasan.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-gray-100 mt-4">
-                        <div class="flex items-baseline justify-between mb-4 mt-3">
-                            <span class="text-xs text-gray-400 font-bold">Mulai Dari</span>
-                            <span class="text-xl font-extrabold text-brand-black font-display">Rp 15.000</span>
-                        </div>
-                        <button onclick="addToCart('Pas Foto Studio Resmi (2x3/3x4/4x6)', 15000, 'pasfoto')" class="w-full bg-brand-black hover:bg-brand-red text-white font-extrabold py-3 rounded-2xl text-xs transition duration-300 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus"></i> Tambahkan ke Bag
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ITEM 4: BINGKAI FOTO MODERN -->
-                <div class="product-card bingkai bg-white rounded-3xl border border-gray-200 overflow-hidden hover:border-brand-red transition duration-500 flex flex-col justify-between group shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black px-2.5 py-1 rounded-lg z-10">FRAME</span>
-                            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=500" alt="Bingkai Foto Premium" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Wooden Frame</span>
-                            <h3 class="font-extrabold text-brand-black text-lg mt-1 mb-2">Bingkai Foto Minimalis Modern</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed">Aneka model & ukuran bingkai kayu eksklusif untuk pajangan foto wisuda & keluarga.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-gray-100 mt-4">
-                        <div class="flex items-baseline justify-between mb-4 mt-3">
-                            <span class="text-xs text-gray-400 font-bold">Harga Bingkai</span>
-                            <span class="text-xl font-extrabold text-brand-black font-display">Rp 35.000</span>
-                        </div>
-                        <button onclick="addToCart('Bingkai Foto Minimalis 10R', 35000, 'bingkai')" class="w-full bg-brand-black hover:bg-brand-red text-white font-extrabold py-3 rounded-2xl text-xs transition duration-300 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus"></i> Tambahkan ke Bag
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ITEM 5: KADO CUSTOM MUG -->
-                <div class="product-card kado bg-white rounded-3xl border border-gray-200 overflow-hidden hover:border-brand-red transition duration-500 flex flex-col justify-between group shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-brand-black text-white text-[10px] font-black px-2.5 py-1 rounded-lg z-10">MERCH</span>
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=500" alt="Kado Custom Mug Foto" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Souvenir</span>
-                            <h3 class="font-extrabold text-brand-black text-lg mt-1 mb-2">Kado Foto Custom (Mug/Kaos)</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed">Mug keramik, bantal, kaos, gantungan kunci, puzzle, kalender foto custom.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-gray-100 mt-4">
-                        <div class="flex items-baseline justify-between mb-4 mt-3">
-                            <span class="text-xs text-gray-400 font-bold">Harga Item</span>
-                            <span class="text-xl font-extrabold text-brand-black font-display">Rp 30.000</span>
-                        </div>
-                        <button onclick="addToCart('Kado Mug Custom Foto', 30000, 'kado')" class="w-full bg-brand-black hover:bg-brand-red text-white font-extrabold py-3 rounded-2xl text-xs transition duration-300 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus"></i> Tambahkan ke Bag
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ITEM 6: CETAK FOTO HD -->
-                <div class="product-card cetak bg-white rounded-3xl border border-gray-200 overflow-hidden hover:border-brand-red transition duration-500 flex flex-col justify-between group shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black px-2.5 py-1 rounded-lg z-10">PRINTING</span>
-                            <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&q=80&w=500" alt="Cetak Foto Berkualitas" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Ultra-HD Paper</span>
-                            <h3 class="font-extrabold text-brand-black text-lg mt-1 mb-2">Cetak Foto Lab (4R/10R/12R)</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed">Berbagai ukuran & jenis kertas foto tajam, anti air, dan tidak mudah pudar.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-gray-100 mt-4">
-                        <div class="flex items-baseline justify-between mb-4 mt-3">
-                            <span class="text-xs text-gray-400 font-bold">Mulai Dari</span>
-                            <span class="text-xl font-extrabold text-brand-black font-display">Rp 5.000</span>
-                        </div>
-                        <button onclick="addToCart('Cetak Foto Lab Ultra-HD', 5000, 'cetak')" class="w-full bg-brand-black hover:bg-brand-red text-white font-extrabold py-3 rounded-2xl text-xs transition duration-300 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus"></i> Tambahkan ke Bag
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ITEM 7: EDIT & RESTORASI FOTO -->
-                <div class="product-card edit bg-white rounded-3xl border border-gray-200 overflow-hidden hover:border-brand-red transition duration-500 flex flex-col justify-between group shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-brand-black text-white text-[10px] font-black px-2.5 py-1 rounded-lg z-10">DIGITAL EDIT</span>
-                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=500" alt="Edit Foto Restorasi" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Restoration</span>
-                            <h3 class="font-extrabold text-brand-black text-lg mt-1 mb-2">Edit & Restorasi Foto Lama</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed">Retouching profesional, perbaikan foto tua rusak, manipulasi & kolase foto.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-gray-100 mt-4">
-                        <div class="flex items-baseline justify-between mb-4 mt-3">
-                            <span class="text-xs text-gray-400 font-bold">Biaya Edit</span>
-                            <span class="text-xl font-extrabold text-brand-black font-display">Rp 20.000</span>
-                        </div>
-                        <button onclick="addToCart('Edit / Restorasi Foto Lama', 20000, 'edit')" class="w-full bg-brand-black hover:bg-brand-red text-white font-extrabold py-3 rounded-2xl text-xs transition duration-300 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus"></i> Tambahkan ke Bag
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ITEM 8: PRINT DOKUMEN & FOTOCOPY -->
-                <div class="product-card cetak bg-white rounded-3xl border border-gray-200 overflow-hidden hover:border-brand-red transition duration-500 flex flex-col justify-between group shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-gray-800 text-white text-[10px] font-black px-2.5 py-1 rounded-lg z-10">FAST PRINT</span>
-                            <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&q=80&w=500" alt="Print Dokumen" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Fast Copy</span>
-                            <h3 class="font-extrabold text-brand-black text-lg mt-1 mb-2">Print File & Foto Copy Dokumen</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed">Hitam putih & berwarna, print tugas, presentasi, skripsi dengan hasil tajam & rapi.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-gray-100 mt-4">
-                        <div class="flex items-baseline justify-between mb-4 mt-3">
-                            <span class="text-xs text-gray-400 font-bold">Mulai Dari</span>
-                            <span class="text-xl font-extrabold text-brand-black font-display">Rp 1.000</span>
-                        </div>
-                        <button onclick="addToCart('Print Dokumen / Foto Copy', 1000, 'cetak')" class="w-full bg-brand-black hover:bg-brand-red text-white font-extrabold py-3 rounded-2xl text-xs transition duration-300 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-plus"></i> Tambahkan ke Bag
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- KALKULATOR ESTIMASI COST -->
-    <section id="calculator" class="py-20 border-b border-gray-200 bg-white z-10 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-panel-light p-8 sm:p-12 rounded-3xl border border-gray-200 shadow-xl">
-                <div class="text-center mb-10">
-                    <span class="text-xs font-black text-brand-red uppercase tracking-widest">Instant Cost Estimator</span>
-                    <h2 class="text-3xl font-extrabold font-display text-brand-black mt-1">Kalkulator Estimasi Layanan</h2>
-                    <p class="text-gray-500 text-xs sm:text-sm mt-2">Hitung perkiraan biaya paket foto + bingkai + cetak tambahan secara langsung.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <!-- Base Studio Package -->
-                    <div>
-                        <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">Pilih Paket Studio Base</label>
-                        <select id="calc-package" onchange="calculatePrice()" class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-red">
-                            <option value="0">Tanpa Sesi Studio (Hanya Cetak/Frame)</option>
-                            <option value="50000">Foto Wisuda Paket A (Rp 50.000)</option>
-                            <option value="80000">Foto Wisuda Paket B (Rp 80.000)</option>
-                            <option value="15000">Pas Foto Studio Official (Rp 15.000)</option>
-                        </select>
-                    </div>
-
-                    <!-- Frame Options -->
-                    <div>
-                        <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">Tambahkan Bingkai / Frame</label>
-                        <select id="calc-frame" onchange="calculatePrice()" class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-red">
-                            <option value="0">Tanpa Bingkai</option>
-                            <option value="35000">Bingkai Minimalis 10R (+ Rp 35.000)</option>
-                            <option value="55000">Bingkai Minimalis 12R (+ Rp 55.000)</option>
-                        </select>
-                    </div>
-
-                    <!-- Print Quantity -->
-                    <div>
-                        <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">Jumlah Cetak Tambahan (4R/10R)</label>
-                        <input type="number" id="calc-print-qty" min="0" value="0" onchange="calculatePrice()" onkeyup="calculatePrice()" class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-red" placeholder="0 lembar">
-                    </div>
-
-                    <!-- Custom Gift -->
-                    <div>
-                        <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">Tambahkan Kado Custom (Mug/Souvenir)</label>
-                        <select id="calc-gift" onchange="calculatePrice()" class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-red">
-                            <option value="0">Tanpa Kado Custom</option>
-                            <option value="30000">Mug Foto Custom (+ Rp 30.000)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Price Result Display -->
-                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <div>
-                        <span class="text-xs text-gray-500 font-bold">Estimasi Total Biaya:</span>
-                        <div id="calc-total" class="text-3xl font-extrabold text-brand-red font-display">Rp 0</div>
-                    </div>
-                    <button onclick="addCalculatedToCart()" class="red-gradient-bg text-white font-black px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider hover:opacity-95 transition">
-                        + Tambahkan Kombinasi Ini ke Bag
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- QRIS PAYMENT INFO SECTION -->
-    <section id="qris-section" class="py-20 border-b border-gray-200 z-10 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white p-8 sm:p-12 rounded-3xl border border-gray-200 text-center relative overflow-hidden shadow-xl">
-                <span class="px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/30 text-xs font-black uppercase tracking-widest inline-block mb-4">
-                    <i class="fa-solid fa-qrcode mr-1"></i> Cashless Instant Payment
-                </span>
-                
-                <h2 class="text-3xl font-extrabold font-display text-brand-black mb-2">Pembayaran Mudah dengan QRIS</h2>
-                <p class="text-gray-500 text-xs sm:text-sm max-w-xl mx-auto mb-8">
-                    Mendukung seluruh aplikasi e-wallet (GoPay, OVO, Dana, ShopeePay) & Mobile Banking Bank Nasional.
-                </p>
-
-                <div class="bg-gray-50 p-6 rounded-3xl inline-block shadow-md border border-gray-200 mb-6">
-                    <div class="font-extrabold text-brand-black text-sm mb-1 tracking-wider">MM STUDIO 3</div>
-                    <div class="text-[10px] text-gray-500 mb-3 font-mono">NMID : ID1024362745449</div>
-                    
-                    <!-- QRIS Image -->
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=00020101021126580014ID.GO.QRIS.WWW01189360045110141220240215ID10243627454490303UMI51440014ID.CO.QRIS.WWW0215ID10243627454490303UMI5204581253033605802ID5911MM%20STUDIO%2036005SOCAH61056911162070703A016304D1A0" alt="QRIS MM Studio" class="w-56 h-56 mx-auto border border-gray-200 rounded-xl bg-white p-2">
-                    
-                    <div class="text-[10px] font-black text-brand-black mt-3 uppercase tracking-widest">Satu QRIS Untuk Semua</div>
-                </div>
-
-                <div class="flex justify-center gap-6 text-gray-500 text-xs font-semibold">
-                    <span><i class="fa-solid fa-shield-check text-emerald-500 mr-1"></i> Transaksi Safe</span>
-                    <span><i class="fa-solid fa-bolt text-brand-red mr-1"></i> Fast Verification</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CHECKOUT & BOOKING SECTION -->
-    <section id="checkout-section" class="py-20 border-b border-gray-200 z-10 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white p-8 sm:p-12 rounded-3xl border border-gray-200 shadow-2xl relative">
-                
-                <div class="text-center mb-10">
-                    <span class="text-xs font-black text-brand-red uppercase tracking-widest">Order Confirmation</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-brand-black mt-1">Konfirmasi & Checkout Booking</h2>
-                    <p class="text-gray-500 text-xs sm:text-sm mt-1">Isi formulir untuk langsung terhubung dengan Admin WhatsApp MM Studio.</p>
-                </div>
-
-                <form id="checkout-form" onsubmit="processCheckout(event)" class="space-y-6">
-                    
-                    <!-- Admin Choice -->
-                    <div>
-                        <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-3">1. Pilih WhatsApp Admin Tujuan</label>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <label class="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-2xl cursor-pointer hover:border-brand-red transition">
-                                <input type="radio" name="checkout-admin" value="6285606175907" checked class="accent-brand-red">
-                                <div>
-                                    <span class="font-black text-brand-black block text-sm">Admin I</span>
-                                    <span class="text-xs text-gray-500 font-medium">085606175907</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-2xl cursor-pointer hover:border-brand-red transition">
-                                <input type="radio" name="checkout-admin" value="6281916720280" class="accent-brand-red">
-                                <div>
-                                    <span class="font-black text-brand-black block text-sm">Admin II</span>
-                                    <span class="text-xs text-gray-500 font-medium">081916720280</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Personal Info -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">2. Nama Lengkap Pemesan</label>
-                            <input type="text" id="cust-name" required placeholder="Contoh: Budi Santoso" class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black placeholder-gray-400 focus:outline-none focus:border-brand-red">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">3. Nomor WhatsApp Aktif</label>
-                            <input type="tel" id="cust-phone" required placeholder="08xxxxxxxxxx" class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black placeholder-gray-400 focus:outline-none focus:border-brand-red">
-                        </div>
-                    </div>
-
-                    <!-- Date & Payment Method -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">4. Tanggal Sesi / Pengambilan</label>
-                            <input type="date" id="cust-date" class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-red">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">5. Opsi Pembayaran</label>
-                            <select id="cust-payment" class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-red">
-                                <option value="QRIS Nontunai (MM STUDIO 3)">QRIS (All Bank & E-Wallet)</option>
-                                <option value="Bayar Tunai di Studio">Bayar Tunai / Cash di Studio MM</option>
-                                <option value="Transfer Direct Admin">Transfer Bank Direct</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Notes -->
-                    <div>
-                        <label class="block text-xs font-black text-brand-black uppercase tracking-wider mb-2">6. Catatan Khusus Pesanan</label>
-                        <textarea id="cust-notes" rows="3" placeholder="Tuliskan warna background pas foto, ukuran bingkai, dll..." class="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3.5 text-sm text-brand-black placeholder-gray-400 focus:outline-none focus:border-brand-red"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full py-4 red-gradient-bg text-white font-black rounded-2xl text-base uppercase tracking-wider hover:opacity-95 transition duration-300 shadow-xl shadow-brand-red/20 flex items-center justify-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i> Kirim Pesanan ke WhatsApp Admin
-                    </button>
-                </form>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SHOPPING CART SLIDE-OVER DRAWER -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
-        <div onclick="toggleCart()" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
-
-        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
-            <div class="w-screen max-w-md bg-white border-l border-gray-200 shadow-2xl flex flex-col justify-between">
-                
-                <!-- Drawer Header -->
-                <div class="p-6 border-b border-gray-200 flex items-center justify-between bg-gray-50">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-bag-shopping text-brand-red text-xl"></i>
-                        <h2 class="text-base font-extrabold font-display text-brand-black uppercase tracking-wider">Bag Pesanan MM Studio</h2>
-                    </div>
-                    <button onclick="toggleCart()" class="text-gray-400 hover:text-brand-black p-2">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Items -->
-                <div class="p-6 overflow-y-auto flex-1 space-y-4" id="cart-items-container">
-                    <div class="text-center py-16 text-gray-400">
-                        <i class="fa-solid fa-bag-shopping text-5xl mb-4 text-gray-300"></i>
-                        <p class="font-medium text-sm text-gray-600">Keranjang Anda masih kosong.</p>
-                        <p class="text-xs text-gray-400 mt-1">Pilih paket foto atau produk di atas untuk menambahkan.</p>
-                    </div>
-                </div>
-
-                <!-- Footer -->
-                <div class="p-6 border-t border-gray-200 bg-gray-50">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs text-gray-500 uppercase tracking-wider font-bold">Total Estimasi:</span>
-                        <span id="cart-total-price" class="text-2xl font-black text-brand-red font-display">Rp 0</span>
-                    </div>
-
-                    <a href="#checkout-section" onclick="toggleCart()" class="w-full py-4 red-gradient-bg text-white text-center font-black rounded-2xl text-xs uppercase tracking-wider block transition shadow-lg mb-2">
-                        Lanjut ke Form Checkout <i class="fa-solid fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
-
-            </div>
-        </div>
+    <div class="p-5 pt-3 border-t border-gray-100">
+      <div class="flex items-baseline justify-between mb-3"><span class="text-xs text-gray-400 font-bold">${p.lab}</span><span class="text-xl font-extrabold ${p.hot?'text-brand-red':''}">${rp(p.p)}</span></div>
+      <button onclick="addToCart(${esc(JSON.stringify(p.n))},${p.p})" class="w-full text-white font-extrabold py-3 rounded-2xl text-xs transition ${p.hot?'rg':'bg-brand-black hover:bg-brand-red'}"><i class="fa-solid fa-plus mr-1"></i>Tambahkan ke Bag</button>
     </div>
+  </article>`).join('');
+}
+$('search').addEventListener('input',renderCatalog);
 
-    <!-- FOOTER -->
-    <footer class="bg-brand-black py-16 text-white text-xs relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                <div class="md:col-span-2">
-                    <span class="text-white font-extrabold text-2xl font-display">MM <span class="text-brand-red">STUDIO</span></span>
-                    <p class="text-gray-400 text-xs mt-3 leading-relaxed max-w-md font-normal">
-                        SATU TEMPAT, SEMUA KEBUTUHAN FOTO ANDA! Studio Fotografi & Cetak Modern di Socah Bangkalan. Menyediakan layanan Foto Wisuda, Pas Foto Official, Cetak Ultra-HD, Bingkai Kayu, dan Kado Custom.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-4">Layanan Utama</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#katalog" class="hover:text-brand-red transition">Foto Wisuda Studio</a></li>
-                        <li><a href="#katalog" class="hover:text-brand-red transition">Pas Foto Resmi Ijazah</a></li>
-                        <li><a href="#katalog" class="hover:text-brand-red transition">Cetak Lab & Print File</a></li>
-                        <li><a href="#katalog" class="hover:text-brand-red transition">Bingkai Minimalis & Kado</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-4">Kontak Studio</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fa-solid fa-location-dot text-brand-red mr-2"></i> Socah Bangkalan</li>
-                        <li><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i> Admin I: 085606175907</li>
-                        <li><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i> Admin II: 081916720280</li>
-                        <li><i class="fa-brands fa-instagram text-brand-red mr-2"></i> @mm.studio_</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
-                &copy; <span id="year"></span> MM Studio — Creative Photography & Print House. All rights reserved.
-            </div>
-        </div>
-    </footer>
+/* CART (tersimpan di localStorage) */
+let cart=[];
+try{cart=JSON.parse(localStorage.getItem('mm_cart')||'[]').filter(i=>i&&i.n&&i.p>0&&i.q>0)}catch(e){}
+function save(){try{localStorage.setItem('mm_cart',JSON.stringify(cart))}catch(e){}}
+function toggleCart(){
+  const d=$('drawer');d.classList.toggle('hidden');
+  document.body.style.overflow=d.classList.contains('hidden')?'':'hidden';
+}
+function addToCart(n,p){
+  const f=cart.find(i=>i.n===n);f?f.q++:cart.push({n,p,q:1});
+  renderCart();if($('drawer').classList.contains('hidden'))toggleCart();
+}
+function qty(i,d){cart[i].q+=d;if(cart[i].q<=0)cart.splice(i,1);renderCart()}
+const total=()=>cart.reduce((s,i)=>s+i.p*i.q,0);
+function renderCart(){
+  save();
+  $('badge').textContent=cart.reduce((s,i)=>s+i.q,0);
+  $('cartTotal').textContent=rp(total());
+  $('cartItems').innerHTML=cart.length?cart.map((it,i)=>`
+   <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border">
+    <div class="flex-1 pr-3"><h4 class="font-bold text-xs">${esc(it.n)}</h4><span class="text-xs font-black text-brand-red">${rp(it.p)}</span></div>
+    <div class="flex items-center gap-1 bg-white px-2 py-1 rounded-xl border">
+     <button onclick="qty(${i},-1)" class="w-7 h-7 font-bold" aria-label="Kurangi">−</button><span class="text-xs font-black w-5 text-center">${it.q}</span><button onclick="qty(${i},1)" class="w-7 h-7 font-bold hover:text-brand-red" aria-label="Tambah">+</button>
+    </div></div>`).join('')
+  :`<div class="text-center py-16 text-gray-400"><i class="fa-solid fa-bag-shopping text-5xl mb-4 text-gray-300"></i><p class="font-medium text-sm text-gray-600">Bag Anda masih kosong.</p><p class="text-xs mt-1">Pilih paket atau produk untuk menambahkan.</p></div>`;
+  $('coSummary').innerHTML=cart.length?cart.map(i=>`<div class="flex justify-between gap-3 py-1"><span>${esc(i.n)} ×${i.q}</span><b>${rp(i.p*i.q)}</b></div>`).join('')+`<div class="flex justify-between border-t mt-2 pt-2 font-black"><span>Total estimasi</span><span class="text-brand-red">${rp(total())}</span></div>`
+  :`<span class="text-gray-500">Bag kosong — pesanan akan dikirim sebagai konsultasi umum.</span>`;
+}
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+/* CALCULATOR */
+const num=id=>parseInt($(id).value)||0;
+function calc(){
+  const q=Math.min(Math.max(num('cQty'),0),500);
+  const t=num('cPkg')+num('cFrame')+num('cGift')+q*5000;
+  $('cTotal').textContent=rp(t);return t;
+}
+['cPkg','cFrame','cGift','cQty'].forEach(id=>$(id).addEventListener('input',calc));
+function addCalc(){
+  const t=calc();if(!t){alert('Pilih opsi di kalkulator terlebih dahulu.');return}
+  const lbl=id=>{const e=$(id);return e.selectedIndex>0?e.options[e.selectedIndex].text.replace(/\s*\(.*\)/,''):null};
+  const parts=[lbl('cPkg'),lbl('cFrame'),lbl('cGift'),num('cQty')>0?num('cQty')+' cetak tambahan':null].filter(Boolean);
+  addToCart('Kombinasi: '+parts.join(' + '),t);
+}
 
-        // Lightbox Functions
-        function openLightbox(imgSrc, title, desc) {
-            document.getElementById('lightbox-img').src = imgSrc;
-            document.getElementById('lightbox-title').textContent = title;
-            document.getElementById('lightbox-desc').textContent = desc;
-            document.getElementById('lightbox-modal').classList.remove('hidden');
-        }
+/* CHECKOUT */
+const dt=$('date');dt.min=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+$('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const phone=$('phone').value.replace(/[\s-]/g,'');
+  const ok=/^(\+62|62|0)8\d{7,12}$/.test(phone);
+  $('phoneErr').classList.toggle('hidden',ok);
+  if(!ok){$('phone').focus();return}
+  const admin=document.querySelector('input[name="admin"]:checked').value;
+  const items=cart.length?cart.map((i,k)=>`${k+1}. *${i.n}* (x${i.q}) - ${rp(i.p*i.q)}`).join('\n'):'_(Konsultasi umum, belum ada item di Bag)_';
+  const msg=`Halo MM Studio! Saya ingin booking / order:\n\n*DATA PEMESAN*\n• Nama: *${$('name').value.trim()}*\n• WhatsApp: ${phone}\n• Tanggal sesi/ambil: ${dt.value||'-'}\n• Pembayaran: ${$('pay').value}\n\n*PESANAN*\n${items}\n\n*TOTAL ESTIMASI:* *${rp(total())}*\n*CATATAN:* ${$('notes').value.trim()||'-'}`;
+  window.open(`https://wa.me/${admin}?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+});
 
-        function closeLightbox() {
-            document.getElementById('lightbox-modal').classList.add('hidden');
-        }
-
-        // Portofolio Filter Logic
-        function filterPorto(cat) {
-            const buttons = document.querySelectorAll('.porto-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-brand-black', 'text-white');
-                btn.classList.add('bg-white', 'border', 'border-gray-200', 'text-gray-700');
-            });
-
-            event.currentTarget.classList.remove('bg-white', 'border', 'border-gray-200', 'text-gray-700');
-            event.currentTarget.classList.add('bg-brand-black', 'text-white');
-
-            const items = document.querySelectorAll('.porto-item');
-            items.forEach(item => {
-                if (cat === 'all' || item.classList.contains(cat)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Mobile Navigation Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
-        }
-
-        // Cart System State
-        let cart = [];
-
-        function toggleCart() {
-            const drawer = document.getElementById('cart-drawer');
-            drawer.classList.toggle('hidden');
-        }
-
-        function addToCart(name, price, category) {
-            const existingItem = cart.find(item => item.name === name);
-            if (existingItem) {
-                existingItem.qty += 1;
-            } else {
-                cart.push({ name, price, category, qty: 1 });
-            }
-            updateCartUI();
-            
-            const drawer = document.getElementById('cart-drawer');
-            if (drawer.classList.contains('hidden')) {
-                toggleCart();
-            }
-        }
-
-        function updateQuantity(index, change) {
-            cart[index].qty += change;
-            if (cart[index].qty <= 0) {
-                cart.splice(index, 1);
-            }
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const container = document.getElementById('cart-items-container');
-            const cartBadge = document.getElementById('cart-badge');
-            const totalPriceEl = document.getElementById('cart-total-price');
-
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            cartBadge.textContent = totalQty;
-
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            totalPriceEl.textContent = `Rp ${totalPrice.toLocaleString('id-ID')}`;
-
-            if (cart.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-16 text-gray-400">
-                        <i class="fa-solid fa-bag-shopping text-5xl mb-4 text-gray-300"></i>
-                        <p class="font-medium text-sm text-gray-600">Keranjang Anda masih kosong.</p>
-                        <p class="text-xs text-gray-400 mt-1">Pilih paket foto atau produk di atas untuk menambahkan.</p>
-                    </div>
-                `;
-                return;
-            }
-
-            let html = '';
-            cart.forEach((item, index) => {
-                html += `
-                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-200">
-                        <div class="flex-1 pr-3">
-                            <h4 class="font-bold text-brand-black text-xs">${item.name}</h4>
-                            <span class="text-xs font-black text-brand-red">Rp ${item.price.toLocaleString('id-ID')}</span>
-                        </div>
-                        <div class="flex items-center gap-2 bg-white px-2 py-1 rounded-xl border border-gray-200">
-                            <button onclick="updateQuantity(${index}, -1)" class="w-6 h-6 flex items-center justify-center text-gray-600 hover:text-brand-black font-bold text-xs">-</button>
-                            <span class="text-xs font-black text-brand-black px-1">${item.qty}</span>
-                            <button onclick="updateQuantity(${index}, 1)" class="w-6 h-6 flex items-center justify-center text-gray-600 hover:text-brand-red font-bold text-xs">+</button>
-                        </div>
-                    </div>
-                `;
-            });
-            container.innerHTML = html;
-        }
-
-        // Category Filter Logic
-        function setCategory(cat) {
-            const buttons = document.querySelectorAll('.cat-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-brand-black', 'text-white');
-                btn.classList.add('bg-white', 'border', 'border-gray-200', 'text-gray-700');
-            });
-
-            event.currentTarget.classList.remove('bg-white', 'border', 'border-gray-200', 'text-gray-700');
-            event.currentTarget.classList.add('bg-brand-black', 'text-white');
-
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                if (cat === 'all' || card.classList.contains(cat)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Search Filter Logic
-        function filterProducts() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const cards = document.querySelectorAll('.product-card');
-
-            cards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const desc = card.querySelector('p').textContent.toLowerCase();
-                if (title.includes(query) || desc.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Price Calculator Logic
-        function calculatePrice() {
-            const basePkg = parseInt(document.getElementById('calc-package').value) || 0;
-            const frameCost = parseInt(document.getElementById('calc-frame').value) || 0;
-            const printQty = parseInt(document.getElementById('calc-print-qty').value) || 0;
-            const printCost = printQty * 5000;
-            const giftCost = parseInt(document.getElementById('calc-gift').value) || 0;
-
-            const total = basePkg + frameCost + printCost + giftCost;
-            document.getElementById('calc-total').textContent = `Rp ${total.toLocaleString('id-ID')}`;
-        }
-
-        function addCalculatedToCart() {
-            const basePkgEl = document.getElementById('calc-package');
-            const pkgText = basePkgEl.options[basePkgEl.selectedIndex].text;
-            const totalStr = document.getElementById('calc-total').textContent;
-            const totalVal = parseInt(totalStr.replace(/[^0-9]/g, '')) || 0;
-
-            if (totalVal <= 0) {
-                alert('Silakan pilih opsi layanan di kalkulator terlebih dahulu.');
-                return;
-            }
-
-            addToCart(`Kombinasi Custom (${pkgText})`, totalVal, 'custom');
-        }
-
-        // Process Checkout to WhatsApp
-        function processCheckout(e) {
-            e.preventDefault();
-
-            const adminPhone = document.querySelector('input[name="checkout-admin"]:checked').value;
-            const name = document.getElementById('cust-name').value;
-            const phone = document.getElementById('cust-phone').value;
-            const date = document.getElementById('cust-date').value || '-';
-            const payment = document.getElementById('cust-payment').value;
-            const notes = document.getElementById('cust-notes').value || '-';
-
-            let itemsListStr = '';
-            let totalCost = 0;
-
-            if (cart.length > 0) {
-                cart.forEach((item, idx) => {
-                    const subtotal = item.price * item.qty;
-                    totalCost += subtotal;
-                    itemsListStr += `%0A  ${idx + 1}. *${item.name}* (x${item.qty}) - Rp ${subtotal.toLocaleString('id-ID')}`;
-                });
-            } else {
-                itemsListStr = '%0A  _(Konsultasi umum / belum ada barang di keranjang)_';
-            }
-
-            const message = `Halo MM Studio Socah! Saya ingin melakukan Booking / Order Online:%0A%0A` +
-                `*INFORMASI PEMESAN:*%0A` +
-                `• Nama Pemesan: *${encodeURIComponent(name)}*%0A` +
-                `• WhatsApp: ${encodeURIComponent(phone)}%0A` +
-                `• Tanggal Sesi / Ambil: ${encodeURIComponent(date)}%0A` +
-                `• Pembayaran: ${encodeURIComponent(payment)}%0A%0A` +
-                `*RINCIAN PESANAN:*` + itemsListStr + `%0A%0A` +
-                `*TOTAL ESTIMASI:* *Rp ${totalCost.toLocaleString('id-ID')}*%0A` +
-                `*CATATAN KHUSUS:* ${encodeURIComponent(notes)}`;
-
-            const whatsappUrl = `https://wa.me/${adminPhone}?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
+/* MISC */
+$('menuBtn').onclick=()=>$('mobileMenu').classList.toggle('hidden');
+$('mobileMenu').onclick=e=>{if(e.target.closest('a'))$('mobileMenu').classList.add('hidden')};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();if(!$('drawer').classList.contains('hidden'))toggleCart()}});
+$('year').textContent=new Date().getFullYear();
+renderPorto();renderCatalog();renderCart();calc();
+</script>
 </body>
 </html>
